@@ -25,7 +25,6 @@ import UXUIDesignMasterclass from './pages/UXUXDesignMasterClass'
 import DigitalMarketingSEO from './pages/DigitalMarketingSEO'
 import IndustriesOfExcellence from './components/IndustriesOfExcellence'
 import CoreTechnologies from './components/CoreTechnologies'
-import NetworkProcessorsSection from './components/NetworkProcessors'
 import Footersection from './components/Footer'
 import SolutionsSection from './components/SolutionsSection'
 

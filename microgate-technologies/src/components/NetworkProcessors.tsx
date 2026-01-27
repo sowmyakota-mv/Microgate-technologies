@@ -1,5 +1,5 @@
 import React from "react";
-import { Cpu, Server, Network, Zap, ArrowRight, Shield, Code, Layers } from "lucide-react";
+import { Cpu, Server, Network, ArrowRight, Layers } from "lucide-react";
 
 const NetworkProcessorsSection: React.FC = () => {
   return (

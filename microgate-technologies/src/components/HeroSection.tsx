@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight, Play, Pause, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const slides = [
   {
@@ -30,7 +30,7 @@ const slides = [
 
 const HeroSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [isAutoPlay] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Auto slide functionality
@@ -53,17 +53,17 @@ const HeroSection: React.FC = () => {
     }
   }, []);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  };
+  // const nextSlide = () => {
+  //   setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  // };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
+  // const prevSlide = () => {
+  //   setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  // };
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
+  // const goToSlide = (index: number) => {
+  //   setCurrentSlide(index);
+  // };
 
   return (
     <div className="relative w-full h-[450px] md:h-[500px] overflow-hidden">

@@ -5,13 +5,6 @@ import {
   Code, 
   CheckSquare, 
   ArrowRight, 
-  Zap, 
-  Users,
-  TrendingUp,
-  Shield,
-  Target,
-  Clock,
-  Award
 } from "lucide-react";
 
 const CoreTechnologies: React.FC = () => {

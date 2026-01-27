@@ -30,13 +30,6 @@ const AboutSection: React.FC = () => {
               />
             </div>
             
-            {/* Small Stats or Badge */}
-            {/* <div className="mt-4 lg:absolute lg:-right-4 lg:top-1/2 lg:-translate-y-1/2">
-              <div className="bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] text-white rounded-lg p-4 shadow-lg max-w-[150px]">
-                <div className="text-2xl font-bold mb-1">14+</div>
-                <div className="text-xs font-medium">Years Experience</div>
-              </div>
-            </div> */}
           </div>
 
           {/* Right Content Column - 70% width */}

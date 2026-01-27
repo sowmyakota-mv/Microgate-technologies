@@ -140,8 +140,8 @@ const SolutionsSection: React.FC = () => {
     return allSolutions.slice(currentIndex, endIndex);
   };
 
-  const isAtStart = currentIndex === 0;
-  const isAtEnd = currentIndex >= allSolutions.length - visibleCards;
+  // const isAtStart = currentIndex === 0;
+  // const isAtEnd = currentIndex >= allSolutions.length - visibleCards;
 
   return (
     <section className="py-16 md:py-12 bg-gradient-to-b from-gray-50 to-white">
