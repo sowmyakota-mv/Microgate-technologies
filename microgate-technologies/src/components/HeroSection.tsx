@@ -53,63 +53,46 @@ const HeroSection: React.FC = () => {
     }
   }, []);
 
-  // const nextSlide = () => {
-  //   setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  // };
-
-  // const prevSlide = () => {
-  //   setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  // };
-
-  // const goToSlide = (index: number) => {
-  //   setCurrentSlide(index);
-  // };
-
   return (
-    <div className="relative w-full h-[450px] md:h-[500px] overflow-hidden">
+    <div className="relative w-screen overflow-hidden">
       {/* Video Background - Single continuous video */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 w-screen">
         <video
           ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-screen h-full object-cover object-top"
+          className="absolute inset-0 min-w-full min-h-full object-cover"
+          style={{ width: '100vw', height: '100%' }}
         >
           <source src="/hero-bgvideo3.mp4" type="video/mp4" />
           <source src="/hero-bgvideo3.webm" type="video/webm" />
           {/* Fallback image if video doesn't load */}
-          <div className="w-full h-full bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
+          <div className="w-screen h-full bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
             <div className="text-center text-white p-8">
               <h3 className="text-2xl font-bold mb-2">Technology Innovation</h3>
               <p>Your video background will appear here</p>
             </div>
           </div>
         </video>
-        
-        {/* Black gradient overlay for better text contrast */}
-        {/* <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-black/50"></div> */}
-        
-        {/* Additional gradient for depth */}
-        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div> */}
       </div>
 
       {/* Slides Container */}
-      <div className="relative w-full h-full z-10">
+      <div className="relative w-screen h-[450px] md:h-[500px] z-10">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 w-full h-full transition-all duration-700 ease-in-out ${
+            className={`absolute inset-0 w-screen h-full transition-all duration-700 ease-in-out ${
               currentSlide === index
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-full"
             }`}
           >
             {/* Content Container */}
-            <div className="relative h-full max-w-7xl mx-auto px-4 md:px-8 flex items-center">
+            <div className="relative h-full w-screen flex items-center justify-center">
               {/* Text Content Only - No Images */}
-              <div className="w-full">
+              <div className="w-full max-w-7xl px-4 md:px-8">
                 <div className="max-w-4xl mx-auto text-center">
                   <div className="space-y-2">
                     <h1 className={`text-2xl md:text-5xl lg:text-3xl font-bold ${slide.textColor} leading-tight`}>
@@ -136,7 +119,6 @@ const HeroSection: React.FC = () => {
           </div>
         ))}
       </div>
-
     </div>
   );
 };
