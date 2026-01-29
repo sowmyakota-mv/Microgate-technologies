@@ -145,20 +145,20 @@ const SolutionsSection: React.FC = () => {
 
   return (
     <section className="py-16 md:py-12 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="w-full lg:w-screen mx-auto px-4 md:px-8">
         {/* Header Section */}
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#1E3A8A]/10 to-[#3B82F6]/10 text-[#1E3A8A] text-sm font-semibold mb-4">
             <Zap className="w-4 h-4" />
             OUR SOLUTIONS
           </div>
-          <h1 className="text-4xl md:text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
             COMPREHENSIVE{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6]">
+            <span className="transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6]">
               IT SOLUTIONS
             </span>
           </h1>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+          <p className="text-sm md:text-lg text-gray-600 max-w-4xl mx-auto">
             End-to-end technology solutions designed to address your business challenges and drive growth
           </p>
         </div>

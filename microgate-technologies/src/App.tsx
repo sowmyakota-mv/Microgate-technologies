@@ -4,29 +4,21 @@ import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
 import ScrollToTop from './animation/ScrollToTop'
-import Innovation from './components/Innovation'
-import CaseStudiesPage from './pages/CaseStudies'
-import InnovationLab from './pages/DiscoverMore'
-import Solutions from './pages/Solutions'
-import Trainings from './pages/Trainings'
-import FullStackDevelopment from './pages/FullStackDevelopment'
-import AiAndMl from './pages/AiAndMl'
-import DataAnalytics from './pages/DataAnalytics'
-import CorporateUpskilling from './pages/CorporateUpskilling'
-import GraduateInternship from './pages/GraduateInternship'
-import CareerAccelerator from './pages/CareerAccelerator'
-import Insights from './pages/Insights'
-import Connect from './components/Connect'
-import About from './pages/AboutPage'
-import InsightsDetails from './pages/InsightDetail'
-import CloudAndDevops from './pages/CloudAndDevops'
-import CybersecurityFundamentals from './pages/CybersecurityFundamentals'
-import UXUIDesignMasterclass from './pages/UXUXDesignMasterClass'
-import DigitalMarketingSEO from './pages/DigitalMarketingSEO'
 import IndustriesOfExcellence from './components/IndustriesOfExcellence'
 import CoreTechnologies from './components/CoreTechnologies'
 import Footersection from './components/Footer'
 import SolutionsSection from './components/SolutionsSection'
+import CompanyPage from './pages/CompanyPage'
+import WhyUsPage from './pages/WhyUsPage'
+import VisionPage from './pages/VisionPage'
+import MissionPage from './pages/MissionPage'
+import ItConsultingPage from './pages/Solutions/ITConsultingPage'
+import ItOutsourcingPage from './pages/Solutions/ITOutsourcingPage'
+import TestingQAPage from './pages/Solutions/TestingQAPage'
+import MortgageSolutionsPage from './pages/Solutions/MortgageSolutions'
+import PowerAppsPage from './pages/Solutions/PowerAppsPage'
+import CloudSolutionsPage from './pages/Solutions/CloudSolutionsPage'
+import BiVisualizationPage from './pages/Solutions/BiVisualizationPage'
 
 function App() {
   return (
@@ -47,25 +39,17 @@ function App() {
                 {/* <NetworkProcessorsSection/> */}
               </div>
             }/>
-            <Route path='/innovation' element={<Innovation/>}/>
-            <Route path='/innovation/case-studies' element={<CaseStudiesPage/>}/>
-            <Route path='/innovation-lab' element={<InnovationLab/>}/>
-            <Route path='/solutions' element={<Solutions/>}/>
-            <Route path='/trainings' element={<Trainings/>}/>
-            <Route path='trainings/full-stack-development' element={<FullStackDevelopment/>}/>
-            <Route path='/trainings/ai-ml' element={<AiAndMl/>}/>
-            <Route path='/trainings/data-analytics' element={<DataAnalytics/>}/>
-            <Route path='/trainings/corporate-upskilling' element={<CorporateUpskilling/>}/>
-            <Route path='/trainings/graduate-internship' element={<GraduateInternship/>}/>
-            <Route path='/trainings/career-accelerator' element={<CareerAccelerator/>}/>
-            <Route path='/insights' element={<Insights/>}/>
-            <Route path='/connect' element={<Connect/>}/>
-            <Route path='/about-infovance' element={<About/>}/>
-            <Route path='/insights-details' element={<InsightsDetails/>}/>
-            <Route path='/trainings/cloud-devops' element={<CloudAndDevops/>}/>
-            <Route path='/trainings/cybersecurity' element={<CybersecurityFundamentals/>}/>
-            <Route path='/trainings/ui-ux' element={<UXUIDesignMasterclass/>}/>
-            <Route path='/trainings/digital-marketing' element={<DigitalMarketingSEO/>}/>
+            <Route path='/company' element={<CompanyPage/>}/>
+            <Route path='/why-us' element={<WhyUsPage/>}/>
+            <Route path='/vision' element={<VisionPage/>}/>
+            <Route path='/mission' element={<MissionPage/>}/>
+            <Route path='/it-consulting' element={<ItConsultingPage/>}/>
+            <Route path='/it-outsourcing' element={<ItOutsourcingPage/>}/>
+            <Route path='/testing-qa' element={<TestingQAPage/>}/>
+            <Route path='/mortgage-solutions' element={<MortgageSolutionsPage/>}/>
+            <Route path='/power-apps' element={<PowerAppsPage/>}/>
+            <Route path='/cloud-solutions' element={<CloudSolutionsPage/>}/>
+            <Route path='/bi-visualization' element={<BiVisualizationPage/>}/>
           </Routes>
           <Footersection/>
         </div>

@@ -38,7 +38,7 @@ const IndustriesOfExcellence: React.FC = () => {
 
   return (
     <section className="py-16 md:py-12 bg-gradient-to-b from-gray-900 to-gray-950 text-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="w-full lg:w-screen mx-auto px-4 md:px-8">
         {/* Header Section */}
         <div className="text-center mb-6">
           <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-2 leading-tight">
@@ -58,16 +58,16 @@ const IndustriesOfExcellence: React.FC = () => {
           {/* 2x2 Grid Container - Single Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
             {/* First Row: 2 industries */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
               {industries.slice(0, 2).map((industry) => (
                 <div
                   key={industry.id}
-                  className="p-8 hover:border-gray-600 transition-all duration-300 group hover:scale-[1.02]"
+                  className="md:p-8 p-2 hover:border-gray-600 transition-all duration-300 group hover:scale-[1.02]"
                 >
-                  <div className="flex items-start gap-6">
+                  <div className="flex items-start gap-2 md:gap-6">
                     {/* Icon from public folder - INCREASED SIZE */}
-                    <div className={`w-20 h-20 rounded-xl bg-gradient-to-br ${industry.gradient} flex items-center justify-center flex-shrink-0`}>
-                      <div className="text-white w-16 h-16"> {/* Increased from w-10 h-10 */}
+                    <div className={`w-12 md:w-20 h-12  md:h-20 rounded-xl bg-gradient-to-br ${industry.gradient} flex items-center justify-center flex-shrink-0`}>
+                      <div className="text-white w-12 md:w-16 h-12 md:h-16"> {/* Increased from w-10 h-10 */}
                         <img 
                           src={industry.iconPath} 
                           alt={`${industry.title} icon`}
@@ -106,16 +106,16 @@ const IndustriesOfExcellence: React.FC = () => {
             </div>
 
             {/* Second Row: 2 industries */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8">
               {industries.slice(2, 4).map((industry) => (
                 <div
                   key={industry.id}
-                  className="p-8 hover:border-gray-600 transition-all duration-300 group hover:scale-[1.02]"
+                  className="p-2 md:p-8 hover:border-gray-600 transition-all duration-300 group hover:scale-[1.02]"
                 >
-                  <div className="flex items-start gap-6">
+                  <div className="flex items-start gap-2 md:gap-6">
                     {/* Icon from public folder - INCREASED SIZE */}
-                    <div className={`w-20 h-20 rounded-xl bg-gradient-to-br ${industry.gradient} flex items-center justify-center flex-shrink-0`}>
-                      <div className="text-white w-16 h-16"> {/* Increased from w-10 h-10 */}
+                    <div className={`w-12 md:w-20 h-12 md:h-20 rounded-xl bg-gradient-to-br ${industry.gradient} flex items-center justify-center flex-shrink-0`}>
+                      <div className="text-white w-12 md:w-16 h-12 md:h-16"> {/* Increased from w-10 h-10 */}
                         <img 
                           src={industry.iconPath} 
                           alt={`${industry.title} icon`}

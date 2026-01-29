@@ -126,7 +126,7 @@ Kukatpally, Hyderabad-72.
             alt="Innovic Solutions Logo"
             className="w-40 h-auto md:mt-1"
           />
-          <p className="text-gray-400 text-base md:text-2xlg leading-relaxed max-w-5xl text-left">
+          <p className="text-gray-400 text-sm md:text-2xlg leading-relaxed max-w-5xl text-left">
             Microgate Technologies is a premier IT services and technology solutions provider
              specializing in digital transformation, enterprise software development, and cloud 
              computing. We partner with businesses worldwide to deliver innovative solutions that 

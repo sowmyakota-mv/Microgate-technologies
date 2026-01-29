@@ -9,86 +9,92 @@ interface NavItem {
 }
 
 const navLinks: NavItem[] = [
-  { title: "Home", href: "" },
+  { title: "Home", href: "/" },
   { 
     title: "About Us", 
-    href: "about-us",
+    href: "/about-dartglobe",
     submenu: [
-      { title: "Company", href: "company" },
-      { title: "Why Us", href: "why-us" },
-      { title: "Vision", href: "vision" },
-      { title: "Mission", href: "mission"},
+      { title: "Company", href: "/company" },
+      { title: "Why Us", href: "/why-us" },
+      { title: "Vision", href: "/vision" },
+      { title: "Mission", href: "/mission"},
     ], 
   },
   { 
     title: "Solutions", 
-    href: "solutions",
+    href: "/solutions",
     submenu: [
-      { title: "IT Consulting", href: "it-consulting" },
-      { title: "IT Outsourcing", href: "it-outsourcing" },
-      { title: "Testing & QA", href: "testing-qa" },
-      { title: "Mortgage Solutions", href: "mortgage-solutions"},
-      { title: "Power Apps", href: "power-apps" },
-      { title: "Cloud Solutions", href: "cloud-solutions" },
-      { title: "BI & Visualization", href: "bi-visualization" },
+      { title: "IT Consulting", href: "/it-consulting" },
+      { title: "IT Outsourcing", href: "/it-outsourcing" },
+      { title: "Testing & QA", href: "/testing-qa" },
+      { title: "Mortgage Solutions", href: "/mortgage-solutions"},
+      { title: "Power Apps", href: "/power-apps" },
+      { title: "Cloud Solutions", href: "/cloud-solutions" },
+      { title: "BI & Visualization", href: "/bi-visualization" },
     ], 
   },
   { 
     title: "Industries", 
-    href: "industries",
+    href: "/industries",
     submenu: [
-      { title: "Technology", href: "technology" },
-      { title: "Financial Services", href: "financial-services" },
-      { title: "Consumer Goods", href: "consumer-goods" },
-      { title: "Insurance", href: "insurance"},
-      { title: "Health Care", href: "health-care" },
-      { title: "Telecommunication", href: "telecommunication" },
-      { title: "Hospitality", href: "hospitality" },
+      { title: "Technology", href: "/technology" },
+      { title: "Financial Services", href: "/financial-services" },
+      { title: "Consumer Goods", href: "/consumer-goods" },
+      { title: "Insurance", href: "/insurance"},
+      { title: "Health Care", href: "/health-care" },
+      { title: "Telecommunication", href: "/telecommunication" },
+      { title: "Hospitality", href: "/hospitality" },
     ], 
   },
   {
     title: "Technologies",
-    href: "technologies",
+    href: "/technologies",
     submenu: [
-      { title: "Microsoft Technologies", href: "microsoft-technologies" },
-      { title: "Oracle", href: "oracle" },
-      { title: "SAP", href: "sap" },
-      { title: "Block Chain", href: "block-chain" },
-      { title: "Salesforce", href: "salesforce" },
-      { title: "Middleware", href: "middleware" },
-      { title: "Application Development", href: "application-development" },
+      { title: "Microsoft Technologies", href: "/microsoft-technologies" },
+      { title: "Oracle", href: "/oracle" },
+      { title: "SAP", href: "/sap" },
+      { title: "Block Chain", href: "/block-chain" },
+      { title: "Salesforce", href: "/salesforce" },
+      { title: "Middleware", href: "/middleware" },
+      { title: "Application Development", href: "/application-development" },
     ],
   },
   { 
     title: "Core Technologies", 
-    href: "core-technologies",
+    href: "/core-technologies",
     submenu: [
-      { title: "Embedded Systems", href: "embedded-systems" },
-      { title: "Networking", href: "networking" },
-      { title: "VLSI Design", href: "vlsi-design" },
-      { title: "Design Verification", href: "design-verification"},
+      { title: "Embedded Systems", href: "/embedded-systems" },
+      { title: "Networking", href: "/networking" },
+      { title: "VLSI Design", href: "/vlsi-design" },
+      { title: "Design Verification", href: "/design-verification"},
     ], 
   },
-  { title: "Contact Us", href: "contact-us" },
+  { title: "Contact Us", href: "/contact-us" },
 ];
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
-  const [activeLink, setActiveLink] = useState("home");
+  const [activeLink, setActiveLink] = useState("/");
   const navigate = useNavigate();
 
   // Update active link when route changes
   useEffect(() => {
-    const path = location.pathname.replace("/", "");
-    if (path.startsWith("about-us")) setActiveLink("about-us");
-    else if (path.startsWith("industries")) setActiveLink("industries");
-    else if (path.startsWith("solutions")) setActiveLink("solutions");
-    else if (path.startsWith("technologies")) setActiveLink("technologies");
-    else if (path.startsWith("core-technologies")) setActiveLink("core-technologies");
-    else if (path.startsWith("contact-us")) setActiveLink("contact-us");
-    else setActiveLink("home");
+    const path = location.pathname;
+    
+    // Find which nav link matches the current path
+    const activeNavItem = navLinks.find(link => 
+      path === link.href || 
+      (link.submenu && link.submenu.some(sub => path === sub.href)) ||
+      (link.href !== "/" && path.startsWith(link.href))
+    );
+    
+    if (activeNavItem) {
+      setActiveLink(activeNavItem.href);
+    } else {
+      setActiveLink("/");
+    }
   }, [location.pathname]);
 
   const handleMouseEnter = (linkTitle: string) => {
@@ -126,9 +132,9 @@ const Header: React.FC = () => {
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                to={`/${link.href}`}
+                to={link.href}
                 className={`px-5 py-1 text-gray-800 font-medium text-base cursor-pointer transition-all duration-300 flex items-center gap-1 group h-full ${
-                  activeLink === (link.href || "home")
+                  activeLink === link.href
                     ? "text-[#1E3A8A] font-semibold"
                     : "hover:text-[#3B82F6]"
                 }`}
@@ -136,8 +142,8 @@ const Header: React.FC = () => {
                 <div className="relative">
                   {link.title}
                   {/* Underline at bottom of header (word length only) */}
-                  {activeLink === (link.href || "home") && (
-                    <span className="absolute -bottom-9 left-1/2 transform -translate-x-1/2 w-[calc(100%+8px)] h-1 bg-blue-700 "></span>
+                  {activeLink === link.href && (
+                    <span className="absolute -bottom-9 left-1/2 transform -translate-x-1/2 w-[calc(100%+8px)] h-1 bg-blue-700"></span>
                   )}
                 </div>
                 {link.submenu && <ChevronDown className="w-4 h-4 mt-[2px]" />}
@@ -149,8 +155,10 @@ const Header: React.FC = () => {
                   {link.submenu.map((item) => (
                     <Link
                       key={item.title}
-                      to={`/${item.href}`}
-                      className="block px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-[#1E3A8A] text-sm whitespace-nowrap transition-colors border-b border-gray-100 last:border-b-0"
+                      to={item.href}
+                      className={`block px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-[#1E3A8A] text-sm whitespace-nowrap transition-colors border-b border-gray-100 last:border-b-0 ${
+                        location.pathname === item.href ? "bg-blue-50 text-[#1E3A8A]" : ""
+                      }`}
                       onClick={() => setOpenDropdown(null)}
                     >
                       {item.title}
@@ -168,13 +176,6 @@ const Header: React.FC = () => {
             {menuOpen ? <X className="w-6 h-6 text-gray-800" /> : <Menu className="w-6 h-6 text-gray-800" />}
           </button>
         </div>
-
-        {/* Register Button (Optional - uncomment if needed) */}
-        {/* <div className="hidden md:flex">
-          <button onClick={()=>navigate("/connect")} className="bg-[#10B981] hover:bg-[#0DA271] text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg">
-            Register
-          </button>
-        </div> */}
       </div>
 
       {/* ===== Mobile Menu ===== */}
@@ -190,7 +191,7 @@ const Header: React.FC = () => {
               {/* Main Mobile Link */}
               <div
                 className={`flex justify-between items-center px-3 py-3 font-medium cursor-pointer transition-all duration-300 ${
-                  activeLink === (link.href || "home")
+                  activeLink === link.href
                     ? "text-[#1E3A8A] font-semibold"
                     : "text-gray-700 hover:text-[#3B82F6]"
                 }`}
@@ -198,14 +199,14 @@ const Header: React.FC = () => {
                   if (link.submenu) {
                     setOpenDropdown(openDropdown === link.title ? null : link.title);
                   } else {
-                    navigate(`/${link.href}`);
+                    navigate(link.href);
                     setMenuOpen(false);
                   }
                 }}
               >
                 <span className="relative">
                   {link.title}
-                  {activeLink === (link.href || "home") && (
+                  {activeLink === link.href && (
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#F59E0B]"></span>
                   )}
                 </span>
@@ -218,8 +219,12 @@ const Header: React.FC = () => {
                   {link.submenu.map((item) => (
                     <Link
                       key={item.title}
-                      to={`/${item.href}`}
-                      className="block py-2.5 text-sm text-gray-600 hover:text-[#1E3A8A] px-3"
+                      to={item.href}
+                      className={`block py-2.5 text-sm px-3 ${
+                        location.pathname === item.href 
+                          ? "text-[#1E3A8A] font-medium" 
+                          : "text-gray-600 hover:text-[#1E3A8A]"
+                      }`}
                       onClick={() => {
                         setMenuOpen(false);
                         setOpenDropdown(null);
@@ -232,19 +237,6 @@ const Header: React.FC = () => {
               )}
             </div>
           ))}
-          
-          {/* Mobile Register Button (Optional - uncomment if needed) */}
-          {/* <div className="pt-4">
-            <button 
-              onClick={()=>{
-                navigate("/connect");
-                setMenuOpen(false);
-              }} 
-              className="w-full bg-[#10B981] hover:bg-[#0DA271] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-md"
-            >
-              Register
-            </button>
-          </div> */}
         </div>
       )}
     </header>

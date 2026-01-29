@@ -75,7 +75,7 @@ const HeroSection: React.FC = () => {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover object-top"
+          className="absolute inset-0 w-screen h-full object-cover object-top"
         >
           <source src="/hero-bgvideo3.mp4" type="video/mp4" />
           <source src="/hero-bgvideo3.webm" type="video/webm" />
@@ -89,10 +89,10 @@ const HeroSection: React.FC = () => {
         </video>
         
         {/* Black gradient overlay for better text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-black/50"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-black/50"></div> */}
         
         {/* Additional gradient for depth */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div> */}
       </div>
 
       {/* Slides Container */}
@@ -111,17 +111,17 @@ const HeroSection: React.FC = () => {
               {/* Text Content Only - No Images */}
               <div className="w-full">
                 <div className="max-w-4xl mx-auto text-center">
-                  <div className="space-y-6">
-                    <h1 className={`text-3xl md:text-5xl lg:text-3xl font-bold ${slide.textColor} leading-tight`}>
+                  <div className="space-y-2">
+                    <h1 className={`text-2xl md:text-5xl lg:text-3xl font-bold ${slide.textColor} leading-tight`}>
                       {slide.title}
                     </h1>
-                    <p className="text-lg md:text-base text-white/90 max-w-3xl mx-auto">
+                    <p className="text-sm md:text-base text-white/90 max-w-3xl mx-auto">
                       {slide.description}
                     </p>
                   </div>
                   
                   {/* Know More Button */}
-                  <div className="pt-8">
+                  <div className="pt-4">
                     <button 
                       onClick={() => {/* Add your navigation or modal logic here */}}
                       className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"

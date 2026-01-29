@@ -4,7 +4,7 @@ import { Users, Target, Globe, ArrowRight } from "lucide-react";
 const AboutSection: React.FC = () => {
   return (
     <section className="py-16 md:py-16">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="w-full lg:w-screen mx-auto px-4 md:px-8"> {/* Changed from max-w-7xl to w-full lg:w-screen */}
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 lg:gap-12 items-center">
           {/* Left Image Column - 30% width */}
           <div className="lg:col-span-4 relative">
@@ -50,20 +50,21 @@ const AboutSection: React.FC = () => {
               </div>
               
               <div className="text-left mb-2">
-  <div className="space-y-2">
-    <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-      MicroGate Technologies delivers premier IT services and technology solutions for digital 
-      transformation. We partner with businesses worldwide to provide innovative solutions that 
-      drive growth and efficiency.
-    </p>
+                <div className="space-y-2">
+                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                    MicroGate Technologies delivers premier IT services and technology solutions for digital 
+                    transformation. We partner with businesses worldwide to provide innovative solutions that 
+                    drive growth and efficiency.
+                  </p>
 
-    <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-      Our expertise spans enterprise software, cloud computing, cybersecurity, and data analytics. 
-      We serve diverse clients from startups to Fortune 500 companies with customized solutions 
-      aligned with business objectives.
-    </p>
-  </div>
-</div>
+                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                    Our expertise spans enterprise software, cloud computing, cybersecurity, and data analytics. 
+                    We serve diverse clients from startups to Fortune 500 companies with customized solutions 
+                    aligned with business objectives.
+                  </p>
+                </div>
+              </div>
+              
               {/* Key Points - Adjusted for 70% width */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 text-left">
                 <div className="flex items-start gap-3 bg-blue-50/50 p-4 rounded-lg">
