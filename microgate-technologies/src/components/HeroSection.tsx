@@ -54,17 +54,30 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-screen overflow-hidden">
+    <div className="relative w-screen overflow-hidden" style={{ margin: 0, padding: 0 }}>
       {/* Video Background - Single continuous video */}
-      <div className="absolute inset-0 z-0 w-screen">
+      <div className="absolute inset-0 z-0" style={{ 
+        width: '100vw', 
+        margin: 0, 
+        padding: 0,
+        left: 0,
+        right: 0 
+      }}>
         <video
           ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 min-w-full min-h-full object-cover"
-          style={{ width: '100vw', height: '100%' }}
+          className="absolute top-0 left-0 w-screen h-full object-cover"
+          style={{ 
+            width: '100vw', 
+            height: '100%',
+            minWidth: '100vw',
+            maxWidth: '100vw',
+            margin: 0,
+            padding: 0 
+          }}
         >
           <source src="/hero-bgvideo3.mp4" type="video/mp4" />
           <source src="/hero-bgvideo3.webm" type="video/webm" />
@@ -79,18 +92,19 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Slides Container */}
-      <div className="relative w-screen h-[450px] md:h-[500px] z-10">
+      <div className="relative w-screen h-[450px] md:h-[500px] z-10" style={{ margin: 0, padding: 0 }}>
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 w-screen h-full transition-all duration-700 ease-in-out ${
+            className={`absolute inset-0 transition-all duration-700 ease-in-out ${
               currentSlide === index
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-full"
             }`}
+            style={{ width: '100vw', margin: 0, padding: 0 }}
           >
             {/* Content Container */}
-            <div className="relative h-full w-screen flex items-center justify-center">
+            <div className="relative h-full flex items-center justify-center w-screen" style={{ margin: 0, padding: 0 }}>
               {/* Text Content Only - No Images */}
               <div className="w-full max-w-7xl px-4 md:px-8">
                 <div className="max-w-4xl mx-auto text-center">
