@@ -8,14 +8,8 @@ import {
   FaCloud,
   FaDatabase,
   FaMobileAlt,
-  FaShieldAlt,
-  FaLightbulb,
-  FaHandshake,
-  FaRocket,
-  FaSearch,
   FaClipboardCheck,
   FaBriefcase,
-  FaClock,
   FaFileContract,
   FaChartPie
 } from 'react-icons/fa';

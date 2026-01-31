@@ -5,20 +5,10 @@ import {
   FaMicrochip,
   FaNetworkWired,
   FaCogs,
-  FaCloud,
-  FaDatabase,
-  FaMobileAlt,
   FaShieldAlt,
   FaLaptopCode,
-  FaHandshake,
-  FaRocket,
-  FaSearch,
   FaClipboardCheck,
-  FaBriefcase,
-  FaClock,
   FaCar,
-  FaPlane,
-  FaHome
 } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
