@@ -67,7 +67,7 @@ const IndustriesOfExcellence: React.FC = () => {
       <div className="w-full lg:w-screen mx-auto px-4 md:px-8 mt-12">
         {/* Header Section */}
         <div className="text-center mb-6">
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 leading-tight">
+          <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 leading-tight">
             Innovate with{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500">
               Confidence
@@ -157,7 +157,7 @@ const IndustriesOfExcellence: React.FC = () => {
                     {/* Title and Description */}
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
+                        <h3 className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
                           {industry.title}
                         </h3>
                       </div>
