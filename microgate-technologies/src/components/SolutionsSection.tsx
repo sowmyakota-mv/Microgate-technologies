@@ -57,7 +57,7 @@ const SolutionsSection: React.FC = () => {
       id: 4,
       title: "Mortgage Solutions",
       icon: <Home className="w-8 h-8" />,
-      description: "Specialized technology solutions for mortgage and lending industry automation.",
+      description: "Specialized technology solutions for mortgage and lending industry automation and process efficiency.",
       gradient: "from-amber-500 to-amber-600",
       bg: "bg-amber-50",
       iconColor: "text-amber-600",

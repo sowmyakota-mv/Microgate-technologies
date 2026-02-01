@@ -1,7 +1,9 @@
 import React from "react";
 import { Users, Target, Globe, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const AboutSection: React.FC = () => {
+  const navigate=useNavigate()
   return (
     <section className="py-5 mt-8">
       <div className="w-full lg:w-screen mx-auto px-4 md:px-8"> {/* Changed from max-w-7xl to w-full lg:w-screen */}
@@ -63,7 +65,7 @@ const AboutSection: React.FC = () => {
               </div>
 
               {/* Button */}
-              <button className="group inline-flex items-left gap-3 text-white font-semibold py-2 md:py-3 px-8 rounded-lg hover:shadow-xl transition-all duration-300 hover:translate-x-1"
+              <button onClick={()=>navigate('/company')} className="group inline-flex items-left gap-3 text-white font-semibold py-2 md:py-3 px-8 rounded-lg hover:shadow-xl transition-all duration-300 hover:translate-x-1"
               style={{
                         background: 'linear-gradient(135deg, #36B5A0 0%, #0A6B7E 50%, #07284C 100%)'
                       }}>
