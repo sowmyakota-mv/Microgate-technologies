@@ -57,12 +57,12 @@ interface IconCardProps {
 }
 
 const IconCard: React.FC<IconCardProps> = ({ icon, title, description }) => (
-  <div className="flex flex-col items-center text-center p-6 hover:shadow-lg transition-shadow duration-300">
+  <div className="flex flex-col items-center text-center p-4 hover:rounded-xl hover:shadow-lg transition-shadow duration-300">
     <div className="mb-4 p-3 bg-[#36B5A0]/20 text-[#36B5A0] rounded-full">
       {icon}
     </div>
-    <h3 className="text-xl font-semibold text-gray-800 mb-3">{title}</h3>
-    <p className="text-gray-600">{description}</p>
+    <h3 className="text-med md:text-xl font-semibold text-gray-800 mb-3">{title}</h3>
+    <p className="text-gray-600 text-xs md:text-sm">{description}</p>
   </div>
 );
 
@@ -74,12 +74,12 @@ interface VisionPillarCardProps {
 }
 
 const VisionPillarCard: React.FC<VisionPillarCardProps> = ({ icon, title, description }) => (
-  <div className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div className="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
     <div className="mb-4 p-3 bg-[#0A6B7E]/10 text-[#0A6B7E] rounded-full">
       {icon}
     </div>
-    <h3 className="text-lg font-semibold text-gray-800 mb-2">{title}</h3>
-    <p className="text-gray-600 text-sm">{description}</p>
+    <h3 className="text-med md:text-xl font-semibold text-gray-800 mb-2">{title}</h3>
+    <p className="text-gray-600 text-xs md:text-sm">{description}</p>
   </div>
 );
 
@@ -144,7 +144,7 @@ const VisionPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section with Vision Title */}
+      {/* Hero Section with Vision Title - Same as Company Page */}
       <section 
         className="pt-28 pb-24 relative overflow-visible -mb-20"
         style={{
@@ -154,19 +154,19 @@ const VisionPage: React.FC = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center ">
             <div className="inline-flex items-center justify-center mb-3">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+              <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold text-white">
                 Our Vision
               </h1>
             </div>
             
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12">
+            <p className="text-xs md:text-base text-white/90 max-w-3xl mx-auto mb-12">
               To be a premier information technology solutions and services provider, 
               excelling in fulfilling client needs through innovation and excellence
             </p>
           </div>
         </div>
 
-        {/* Image Gallery Section - Positioned at bottom of hero section */}
+        {/* Image Gallery Section - Same as Company Page */}
         <div className="absolute bottom-0 left-0 right-0 transform translate-y-1/2 z-20">
           <div className="container mx-auto px-4">
             <div className="w-[80%] mx-auto">
@@ -265,29 +265,28 @@ const VisionPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Spacer to accommodate the images */}
+      {/* Spacer to accommodate the images - Same as Company Page */}
       <div className="h-48 lg:h-56"></div>
 
-      {/* Our Central Goal Section */}
-      <section className="py-5 mt-12 bg-white">
-        <div className="container mx-auto px-4">
-          {/* Single Title for both columns */}
+      {/* Two Column Paragraph Section - Same layout as Company Page */}
+      <section className="py-5 bg-white">
+        <div className="container mx-auto px-4 mt-10">
+          {/* Single Title for both columns - Same as Company Page */}
           <div className="text-left mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Our Vision Statement
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column - Our Central Goal */}
+            {/* Left Column - One Detailed Paragraph - Same styling as Company Page */}
             <div className="space-y-2">
               <div className="flex items-start">
                 <div className="p-3 bg-[#36B5A0]/10 rounded-lg mr-4 mt-1 flex-shrink-0">
                   <FaBullseye className="text-[#36B5A0] text-xl" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3">Our Central Goal</h3>
-                  <p className="text-gray-700 text-left leading-relaxed">
+                  <p className="text-gray-700 text-xs md:text-sm text-left leading-relaxed line-clamp-7">
                     <strong>Microgate Technologies Private Ltd</strong> aims to dynamically understand and implement 
                     our vision by delivering innovative, proactive, efficient, cost-effective, quality solutions 
                     and services to our customers worldwide. We build a strong internal value system that provides 
@@ -297,15 +296,14 @@ const VisionPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Column - Premier Provider */}
+            {/* Right Column - One Detailed Paragraph - Same styling as Company Page */}
             <div className="space-y-2">
               <div className="flex items-start">
                 <div className="p-3 bg-[#0A6B7E]/10 rounded-lg mr-4 mt-1 flex-shrink-0">
                   <FaStar className="text-[#0A6B7E] text-xl" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3">Premier Provider Vision</h3>
-                  <p className="text-gray-700 text-left leading-relaxed">
+                  <p className="text-gray-700 text-xs md:text-sm text-left leading-relaxed line-clamp-7">
                     To be a <strong>premier information technology solutions and services provider</strong>, 
                     excelling in fulfilling the needs of clients, partners and employees by delivering the 
                     most efficient and effective services and solutions, utilizing the best resources available 
@@ -318,19 +316,19 @@ const VisionPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Vision Pillars Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Pillars of Our Vision
+      {/* Vision Pillars Section - Updated with same styling */}
+      <section className="py-5 bg-white">
+        <div className="container mx-auto px-4 mt-10">
+          <div className="text-center mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Pillars of <span className="text-[#36B5A0]">Our Vision</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xs md:text-base text-gray-600 max-w-3xl mx-auto">
               The foundation upon which we build our success and drive our organization forward
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-4 lg:gap-6 mb-12">
             {visionPillars.map((pillar, index) => (
               <VisionPillarCard
                 key={index}
@@ -343,11 +341,12 @@ const VisionPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Operational Excellence Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
+      {/* Operational Excellence Section - Same layout as Company Page's Foundation section */}
+      <section className="py-5 bg-white">
+        <div className="container mx-auto px-4 mt-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            {/* Image Column - Comes first on mobile/tablet, left side on desktop */}
+            <div className="order-1 lg:order-1">
               <div className="relative rounded-xl overflow-hidden shadow-xl">
                 <div className="h-64 md:h-80 relative">
                   <img 
@@ -359,28 +358,30 @@ const VisionPage: React.FC = () => {
                 </div>
               </div>
             </div>
-            
-            <div className="space-y-2">
-              <h3 className="text-3xl text-left font-bold text-gray-800">
+
+            {/* Content Column - Comes second on mobile/tablet, right side on desktop */}
+            <div className="order-2 lg:order-2 space-y-2 -mt-8">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl text-left font-bold text-gray-800 mb-3">
                 Operational Excellence
               </h3>
-              <p className="text-gray-700 text-left leading-relaxed">
+              
+              <p className="text-gray-700 text-xs md:text-sm text-left leading-relaxed mb-6">
                 Our organization collective comprises veteran industry directors with decades of program/project 
                 management, utilization, and product development experience. The team brings strong industry 
                 knowledge, business transformation expertise, business process capability, and direct execution 
                 experience to every engagement.
               </p>
               
-              <div className="p-6 bg-blue-50 rounded-xl border-l-4 border-blue-600">
+              <div className="p-4 bg-blue-50 rounded-xl border-l-4 border-blue-600">
                 <div className="flex items-start">
-                  <FaQuoteLeft className="text-blue-600 text-2xl mr-4 mt-1" />
+                  <FaQuoteLeft className="text-blue-600 text-4xl mr-4 mt-1" />
                   <div>
-                    <p className="text-[#07284C] font-semibold text-left italic">
+                    <p className="text-[#07284C] text-sm md:text-med font-semibold text-left italic">
                       "We provide highly qualified and experienced resources at optimal costs, meeting any 
                       challenging schedule using our broad pool of offshore capabilities. Our process enforces 
                       strict adherence to documentation, quality control, and client communication standards."
                     </p>
-                    <p className="text-blue-700 font-medium mt-3">— Microgate Technologies Commitment</p>
+                    <p className="text-blue-700 text-sm md:text-med font-medium mt-3">— Microgate Technologies Commitment</p>
                   </div>
                 </div>
               </div>
@@ -389,19 +390,19 @@ const VisionPage: React.FC = () => {
         </div>
       </section>
 
-      {/* How We Deliver Our Vision Section */}
-      <section className="mt-12 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+      {/* How We Deliver Our Vision Section - Same as Company Page's "We Help You Grow" section */}
+      <section className="py-5 bg-gray-50">
+        <div className="container mx-auto px-4 mt-10">
+          <div className="text-center mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               How We Deliver <span className="text-[#36B5A0]">Our Vision</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xs md:text-base text-gray-600 max-w-3xl mx-auto">
               Transforming our vision into tangible results through strategic execution and commitment
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-12">
             {growthSections.map((section, index) => (
               <IconCard
                 key={index}
