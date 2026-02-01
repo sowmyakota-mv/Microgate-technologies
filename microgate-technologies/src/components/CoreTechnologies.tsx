@@ -135,7 +135,7 @@ const CoreTechnologies: React.FC = () => {
             <div className="w-2 h-2 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full"></div>
             <span>CORE TECHNOLOGIES</span>
           </div>
-          <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
             Advanced <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#3B82F6] to-[#1E3A8A] bg-[length:200%] animate-gradient">Technical</span> Expertise
           </h1>
           <p className="text-sm md:text-base text-gray-600">

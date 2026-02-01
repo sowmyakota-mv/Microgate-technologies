@@ -51,12 +51,12 @@ interface IconCardProps {
 }
 
 const IconCard: React.FC<IconCardProps> = ({ icon, title, description }) => (
-  <div className="flex flex-col items-center text-center p-6 hover:shadow-lg transition-shadow duration-300">
+  <div className="flex flex-col items-center text-center p-4 hover:rounded-xl hover:shadow-lg transition-shadow duration-300">
     <div className="mb-4 p-3 bg-[#36B5A0]/20 text-[#36B5A0] rounded-full">
       {icon}
     </div>
-    <h3 className="text-xl font-semibold text-gray-800 mb-3">{title}</h3>
-    <p className="text-gray-600">{description}</p>
+    <h3 className="text-med md:text-xl font-semibold text-gray-800 mb-3">{title}</h3>
+    <p className="text-gray-600 text-xs md:text-sm">{description}</p>
   </div>
 );
 
@@ -98,12 +98,12 @@ const CompanyPage: React.FC = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center ">
             <div className="inline-flex items-center justify-center mb-3">
-              <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold text-white">
+              <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold text-white">
                 About Us
               </h1>
             </div>
             
-            <p className="text-sm md:text-xl text-white/90 max-w-3xl mx-auto mb-12">
+            <p className="text-xs md:text-base text-white/90 max-w-3xl mx-auto mb-12">
               Pioneering IT solutions and outsourcing services since 2006, 
               transforming businesses worldwide through innovation and expertise
             </p>
@@ -257,11 +257,11 @@ const CompanyPage: React.FC = () => {
       <div className="h-48 lg:h-56"></div>
 
       {/* Two Column Paragraph Section */}
-      <section className="py-5 mt-12 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-5  bg-white">
+        <div className="container mx-auto px-4 mt-10">
           {/* Single Title for both columns */}
           <div className="text-left mb-8">
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Our Global IT Solutions Expertise
             </h2>
           </div>
@@ -274,7 +274,7 @@ const CompanyPage: React.FC = () => {
                   <FaGlobeAmericas className="text-[#36B5A0] text-xl" />
                 </div>
                 <div>
-                  <p className="text-gray-700 text-sm  text-left leading-relaxed line-clamp-7">
+                  <p className="text-gray-700 text-xs md:text-sm text-left leading-relaxed line-clamp-7">
                     <strong>Microgate Technologies Private Ltd</strong> is a worldwide enhanced outsourced IT services and solutions organization. 
                     Since 2006, we have been helping our customers accomplish their business targets by effectively outsourcing their non-core 
                     business processes and delivering enterprise solutions. We have executed numerous engagements for diverse customers by 
@@ -291,7 +291,7 @@ const CompanyPage: React.FC = () => {
                   <FaLightbulb className="text-[#0A6B7E] text-xl" />
                 </div>
                 <div>
-                  <p className="text-gray-700 text-sm text-left leading-relaxed line-clamp-7">
+                  <p className="text-gray-700 text-xs md:text-sm text-left leading-relaxed line-clamp-7">
                     <strong>Microgate Technologies</strong> is a technology, development, and outsourcing association in the IT and Software industry. 
                     We provide both programming services and products, supplying a comprehensive range of IT applications solutions and services 
                     including e-Business solutions, ERP implementation and support, application development and maintenance, software customizations, 
@@ -304,85 +304,74 @@ const CompanyPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Image Section with Note */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-5 bg-white">
+        <div className="container mx-auto px-4 mt-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-  <div className="relative rounded-xl overflow-hidden shadow-xl">
-    <div className="h-64 md:h-80 relative">
-      <img 
-        src="/company-5.png" 
-        alt="Microgate Technologies Journey Timeline"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A6B7E]/70"></div>
-      {/* <div className="absolute inset-0 flex items-center justify-center">
-        <FaHistory className="text-white text-8xl opacity-30" />
-      </div> */}
-    </div>
-    {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0A6B7E]/90 to-transparent p-6">
-      <h3 className="text-white text-xl font-bold">18+ Years of Excellence</h3>
-    </div> */}
-  </div>
-</div>
-            
-            <div className="space-y-2">
-              <h3 className="text-3xl text-left font-bold text-gray-800">
+            {/* Content Column - Comes first on mobile/tablet, right side on desktop */}
+            <div className="order-2 lg:order-2 space-y-2 -mt-8">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl text-left font-bold text-gray-800 mb-3">
                 Foundation & Legacy
               </h3>
               
-              <p className="text-gray-700 text-left leading-relaxed">
+              <p className="text-gray-700 text-xs md:text-sm text-left leading-relaxed mb-6">
                 Microgate Technologies was established by highly qualified professionals in Information Technology 
                 with a vision to provide innovative, cost-effective, and quality services and solutions worldwide. 
                 We address our clients' needs with exceptional expertise and flexible solutions tailored to their 
                 requirements at an affordable cost.
               </p>
-              <div className="p-6 bg-blue-50 rounded-xl border-l-4 border-blue-600">
-                              <div className="flex items-start">
-                                <FaQuoteLeft className="text-blue-600 text-2xl mr-4 mt-1" />
-                                <div>
-                                  <p className="text-[#07284C] font-semibold text-left italic">
-                                     We consistently deliver cost-effective, value-driven solutions through the integration 
-                      of people, processes, and innovative technology. Our vast experience in offshore 
-                      outsourcing has matured us into a reliable partner providing substantial value and 
-                      significant savings to our clients.</p>
-                                  <p className="text-blue-700 font-medium mt-3">— Microgate Technologies Leadership</p>
-                                </div>
-                              </div>
-                            </div>
-              {/* <div className="p-6">
+              <div className="p-4 bg-blue-50 rounded-xl border-l-4 border-blue-600">
                 <div className="flex items-start">
+                  <FaQuoteLeft className="text-blue-600 text-2xl mr-4 mt-1" />
                   <div>
-                    <FaQuoteLeft className="text-blue-600 text-2xl mr-4 mt-1" />
-                    <p className="text-[#07284C] font-semibold text-left">
-                       We consistently deliver cost-effective, value-driven solutions through the integration 
+                    <p className="text-[#07284C] text-sm md:text-med font-semibold text-left italic">
+                      We consistently deliver cost-effective, value-driven solutions through the integration 
                       of people, processes, and innovative technology. Our vast experience in offshore 
                       outsourcing has matured us into a reliable partner providing substantial value and 
                       significant savings to our clients.
                     </p>
+                    <p className="text-blue-700 text-sm md:text-med font-medium mt-3">— Microgate Technologies Leadership</p>
                   </div>
                 </div>
-              </div> */}
+              </div>
+            </div>
+
+            {/* Image Column - Comes second on mobile/tablet, left side on desktop */}
+            <div className="order-1 lg:order-1">
+              <div className="relative rounded-xl overflow-hidden shadow-xl">
+                <div className="h-64 md:h-80 relative">
+                  <img 
+                    src="/company-5.png" 
+                    alt="Microgate Technologies Journey Timeline"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A6B7E]/70"></div>
+                  {/* <div className="absolute inset-0 flex items-center justify-center">
+                    <FaHistory className="text-white text-8xl opacity-30" />
+                  </div> */}
+                </div>
+                {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0A6B7E]/90 to-transparent p-6">
+                  <h3 className="text-white text-xl font-bold">18+ Years of Excellence</h3>
+                </div> */}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* We Help You Grow Section */}
-      <section className="mt-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+      <section className="py-5 bg-gray-50">
+        <div className="container mx-auto px-4 mt-10">
+          <div className="text-center mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               We Help You Grow <span className="text-[#36B5A0]">Faster & Bigger</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xs md:text-base text-gray-600 max-w-3xl mx-auto">
               Partner with us to accelerate your business growth with our comprehensive IT solutions 
               and outsourcing expertise
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-12">
             {growthSections.map((section, index) => (
               <IconCard
                 key={index}

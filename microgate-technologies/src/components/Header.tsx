@@ -12,7 +12,7 @@ const navLinks: NavItem[] = [
   { title: "Home", href: "/" },
   { 
     title: "About Us", 
-    href: "/about-dartglobe",
+    href: "/company",
     submenu: [
       { title: "Company", href: "/company" },
       { title: "Why Us", href: "/why-us" },
@@ -22,7 +22,7 @@ const navLinks: NavItem[] = [
   },
   { 
     title: "Solutions", 
-    href: "/solutions",
+    href: "/it-consulting",
     submenu: [
       { title: "IT Consulting", href: "/it-consulting" },
       { title: "IT Outsourcing", href: "/it-outsourcing" },
@@ -35,7 +35,7 @@ const navLinks: NavItem[] = [
   },
   { 
     title: "Industries", 
-    href: "/industries",
+    href: "/technology",
     submenu: [
       { title: "Technology", href: "/technology" },
       { title: "Financial Services", href: "/financial-services" },
@@ -48,7 +48,7 @@ const navLinks: NavItem[] = [
   },
   {
     title: "Technologies",
-    href: "/technologies",
+    href: "/microsoft-technologies",
     submenu: [
       { title: "Microsoft Technologies", href: "/microsoft-technologies" },
       { title: "Oracle", href: "/oracle" },
@@ -61,7 +61,7 @@ const navLinks: NavItem[] = [
   },
   { 
     title: "Core Technologies", 
-    href: "/core-technologies",
+    href: "/embedded-systems",
     submenu: [
       { title: "Embedded Systems", href: "/embedded-systems" },
       { title: "Networking", href: "/networking" },
