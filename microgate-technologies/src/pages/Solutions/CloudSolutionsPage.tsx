@@ -51,11 +51,10 @@ const CloudSolutionsPage: React.FC = () => {
     },
     {
       icon: <FaCogs className="text-2xl text-[#0A6B7E]" />,
-            title: "IT Consulting",
-            description: "Strategic IT consulting services for business transformation",
-            path: "/it-consulting"
-          }
-    // Cloud Solutions is not in this portfolio (current page)
+      title: "IT Consulting",
+      description: "Strategic IT consulting services for business transformation",
+      path: "/it-consulting"
+    }
   ];
 
   // Cloud Services Portfolio
@@ -66,30 +65,6 @@ const CloudSolutionsPage: React.FC = () => {
     "Software as a Service (SaaS)",
     "24×7 Monitoring & Technical Support"
   ];
-
-  // Cloud Advantages
-//   const cloudAdvantages = [
-//     {
-//       icon: <FaServer className="text-xl text-[#36B5A0]" />,
-//       title: "High Availability",
-//       description: "Advanced tools and flexible administration for maximum uptime"
-//     },
-//     {
-//       icon: <FaSync className="text-xl text-[#0A6B7E]" />,
-//       title: "Scalability",
-//       description: "Easily scale resources up or down based on business demands"
-//     },
-//     {
-//       icon: <FaShield className="text-xl text-[#36B5A0]" />,
-//       title: "Security & Compliance",
-//       description: "Secured cloud environments with enterprise-grade security"
-//     },
-//     {
-//       icon: <FaExpand className="text-xl text-[#0A6B7E]" />,
-//       title: "Flexible Deployments",
-//       description: "Multiple hosting options across diverse federated clouds"
-//     }
-//   ];
 
   // Cloud Benefits
   const cloudBenefits = [
@@ -133,10 +108,10 @@ const CloudSolutionsPage: React.FC = () => {
 
         <div className="container mx-auto px-4 relative z-10">
          <div className="text-left w-full">
-            <h1 className="text-4xl md:text-5xl lg:text-4xl font-bold text-white mb-2">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
               We Build Unique & Custom Solutions
             </h1>
-            <p className="text-med md:text-xl text-white/90 mb-8">
+            <p className="text-base md:text-lg text-white/90 mb-8">
               Functional & technology enabled solutions to solve business problems
             </p>
           </div>
@@ -144,57 +119,59 @@ const CloudSolutionsPage: React.FC = () => {
       </section>
 
       {/* Main Content Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto mb-16">
+      <section className="py-5 bg-white">
+        <div className="container mx-auto px-4 mt-10">
+          <div className="max-w-5xl mx-auto">
             {/* Title added */}
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center">
               Cloud <span className="text-[#0A6B7E]">Migration Approach</span>
             </h2>
             
             {/* Single detailed paragraph */}
-            <p className="text-med md:text-med text-gray-700 leading-relaxed">
+            <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
               <span className="font-semibold text-[#07284C]">At Microgate Technologies,</span> we've assembled, facilitated, and conveyed cloud and SOA based frameworks for an extensive variety of customers in numerous enterprises. Today, organizations of all sizes in all businesses are dealing with a regularly expanding number of associations and exchanges. To an ever increasing extent, your clients, workers, and providers are searching for access to data. This expanding request is putting weight on your framework, frameworks, applications, and IT assets. Supporting dynamic markets may require more flexibility than your traditional IT show offers. What's more, as requests for information stockpiling capacity detonates, datacenter costs keep on increasing. Neglecting to react to any of these difficulties can moderate business development and put your organization at a competitive inconvenience. Cloud administrations may hold the response to these difficulties.
             </p>
           </div>
 
           {/* Solutions Portfolio Section */}
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">
+          <div className="py-3 mt-8">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 text-center">
               Our <span className="text-[#36B5A0]">Solutions Portfolio</span>
             </h2>
             
             {/* 3 Rows Grid Container - Showing 6 solutions (without Cloud Solutions) */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               {/* Row 1 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3">
                 {/* Solution 1 */}
                 <div 
                   onClick={() => handleSolutionClick(solutions[0].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group"
+                  className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group relative"
                 >
                   <div className="space-y-2">
                     {/* First Row: Title with Arrow */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
+                        <h3 className="text-sm md:text-lg font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
                           {solutions[0].title}
                         </h3>
                       </div>
+                      {/* Upward-facing arrow with border radius - Reduced size for mobile */}
                       <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-10 w-10 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-        </svg>
-      </div> </div>
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="w-6 h-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                          viewBox="0 0 20 20" 
+                          fill="currentColor"
+                        >
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                    </div>
                     
                     {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-gray-600 text-xs md:text-sm">
                         {solutions[0].description}
                       </p>
                     </div>
@@ -204,30 +181,31 @@ const CloudSolutionsPage: React.FC = () => {
                 {/* Solution 2 */}
                 <div 
                   onClick={() => handleSolutionClick(solutions[1].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
+                  className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {/* First Row: Title with Arrow */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
+                        <h3 className="text-sm md:text-lg font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
                           {solutions[1].title}
                         </h3>
                       </div>
                       <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-10 w-10 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-        </svg>
-      </div></div>
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="w-6 h-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                          viewBox="0 0 20 20" 
+                          fill="currentColor"
+                        >
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                    </div>
                     
                     {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-xs md:text-sm text-gray-600">
                         {solutions[1].description}
                       </p>
                     </div>
@@ -236,34 +214,35 @@ const CloudSolutionsPage: React.FC = () => {
               </div>
               
               {/* Row 2 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3">
                 {/* Solution 3 */}
                 <div 
                   onClick={() => handleSolutionClick(solutions[2].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group"
+                  className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {/* First Row: Title with Arrow */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
+                        <h3 className="text-sm md:text-lg font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
                           {solutions[2].title}
                         </h3>
                       </div>
                       <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-10 w-10 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-        </svg>
-      </div></div>
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-6 w-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                          viewBox="0 0 20 20" 
+                          fill="currentColor"
+                        >
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                    </div>
                     
                     {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-xs md:text-sm text-gray-600">
                         {solutions[2].description}
                       </p>
                     </div>
@@ -273,30 +252,31 @@ const CloudSolutionsPage: React.FC = () => {
                 {/* Solution 4 */}
                 <div 
                   onClick={() => handleSolutionClick(solutions[3].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
+                  className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {/* First Row: Title with Arrow */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
+                        <h3 className="text-sm md:text-lg font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
                           {solutions[3].title}
                         </h3>
                       </div>
-                     <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-10 w-10 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-        </svg>
-      </div></div>
+                      <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-6 w-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                          viewBox="0 0 20 20" 
+                          fill="currentColor"
+                        >
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                    </div>
                     
                     {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-xs md:text-sm text-gray-600">
                         {solutions[3].description}
                       </p>
                     </div>
@@ -305,34 +285,35 @@ const CloudSolutionsPage: React.FC = () => {
               </div>
               
               {/* Row 3 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3">
                 {/* Solution 5 */}
                 <div 
                   onClick={() => handleSolutionClick(solutions[4].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group"
+                  className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {/* First Row: Title with Arrow */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
+                        <h3 className="text-sm md:text-lg font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
                           {solutions[4].title}
                         </h3>
                       </div>
-                     <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-10 w-10 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-        </svg>
-      </div> </div>
+                      <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-6 w-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                          viewBox="0 0 20 20" 
+                          fill="currentColor"
+                        >
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                    </div>
                     
                     {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-xs md:text-sm text-gray-600">
                         {solutions[4].description}
                       </p>
                     </div>
@@ -342,30 +323,31 @@ const CloudSolutionsPage: React.FC = () => {
                 {/* Solution 6 */}
                 <div 
                   onClick={() => handleSolutionClick(solutions[5].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
+                  className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {/* First Row: Title with Arrow */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
+                        <h3 className="text-sm md:text-lg font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
                           {solutions[5].title}
                         </h3>
                       </div>
                       <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-10 w-10 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-        </svg>
-      </div> </div>
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="w-6 h-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                          viewBox="0 0 20 20" 
+                          fill="currentColor"
+                        >
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                    </div>
                     
                     {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-xs md:text-sm text-gray-600">
                         {solutions[5].description}
                       </p>
                     </div>
@@ -376,28 +358,28 @@ const CloudSolutionsPage: React.FC = () => {
           </div>
 
           {/* Cloud Services Section */}
-          <div className="bg-gradient-to-r from-[#36B5A0]/10 to-[#0A6B7E]/10 rounded-2xl p-8 mb-16">
-            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+          <div className="bg-gradient-to-r from-[#36B5A0]/10 to-[#0A6B7E]/10 rounded-2xl p-4 py-5">
+            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 mt-10">
               {/* Left side: Title, paragraph, and cloud services */}
               <div className="lg:w-1/2">
-                <div className="mb-6">
-                  <h3 className="text-3xl text-left font-bold text-gray-900 mb-4">
+                <div className="">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
                     Microgate Technologies <span className="text-[#0A6B7E]">Cloud Services</span> Advantage
                   </h3>
-                  <p className="text-gray-700 text-left mb-6">
+                  <p className="text-xs md:text-sm text-gray-700 mb-3">
                     Microgate Technologies offers you cloud based facilitating solutions as a piece of any product designing engagement we embrace. We've manufactured, facilitated, and sent cloud and SOA based frameworks for an extensive variety of customers in numerous enterprises. Our experts have top to bottom involvement with the technologies and best practices within each layer of the cloud stack Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).
                   </p>
                 </div>
                 
                 {/* Cloud services list */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                  {cloudServices.map((item, index) => (
-                                                    <div key={index} className="flex items-start text-left bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
-                                                      <FaCheckCircle className="text-[#36B5A0]  mr-3 mt-1 flex-shrink-0" />
-                                                      <span className="font-medium text-gray-800">{item}</span>
-                                                    </div>
-                                                  ))}
-                                                </div>
+                  {cloudServices.map((item, index) => (
+                    <div key={index} className="flex items-start text-left bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+                      <FaCheckCircle className="text-[#36B5A0] mr-3 mt-1 flex-shrink-0" />
+                      <span className="font-medium text-gray-800">{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
               
               {/* Right side: Image */}
@@ -408,7 +390,7 @@ const CloudSolutionsPage: React.FC = () => {
                     <img 
                       src="/solutions-img.png" 
                       alt="Cloud Solutions"
-                      className="w-full h-full object-cover rounded-xl mt-12"
+                      className="w-full h-full object-cover rounded-xl md:mt-12"
                       onError={(e) => {
                         // Fallback if image doesn't load
                         e.currentTarget.style.display = 'none';
@@ -432,77 +414,54 @@ const CloudSolutionsPage: React.FC = () => {
           </div>
 
           {/* Migrating To The Cloud Section */}
-          <div className="">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
+          <div className="py-5">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center mt-10">
               <span className="text-[#0A6B7E]">Migrating</span> To The Cloud
             </h2>
             
-            <div className="bg-white rounded-2xl p-8 border border-gray-200">
-              <p className="text-lg text-gray-700 mb-6">
+            <div className="bg-white rounded-2xl p-4 md:p-8 border border-gray-200">
+              <p className="text-xs md:text-sm text-gray-700 mb-6">
                 Cloud movement administrations at Microgate Technologies are intended to supplement our application development benefits and give an extensive arrangement from development to testing, facilitating, support, to tasks. Moving to the cloud with us offers you the accompanying benefits:
               </p>
               
               {/* Benefits list */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {cloudBenefits.map((benefit, index) => (
                   <div key={index} className="flex items-start text-left">
                     <div className="w-2 h-2 bg-[#36B5A0] rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-700">{benefit}</span>
+                    <span className="text-xs md:text-sm text-gray-700">{benefit}</span>
                   </div>
                 ))}
               </div>
               
               {/* Multiple hosting options */}
               <div className="mt-8 pt-6 border-t border-gray-200">
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Multiple Hosting Options:</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <h4 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">Multiple Hosting Options:</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   <div className="bg-gray-50 rounded-lg p-4 text-center">
                     <FaServer className="text-2xl text-[#0A6B7E] mx-auto mb-2" />
                     <p className="font-medium text-gray-800">Private Cloud</p>
-                    <p className="text-sm text-gray-600">Build and support within your organization</p>
+                    <p className="text-xs md:text-sm text-gray-600">Build and support within your organization</p>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4 text-center">
                     <FaShield className="text-2xl text-[#36B5A0] mx-auto mb-2" />
                     <p className="font-medium text-gray-800">Secured Cloud</p>
-                    <p className="text-sm text-gray-600">Host and operate secured environment</p>
+                    <p className="text-xs md:text-sm text-gray-600">Host and operate secured environment</p>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4 text-center">
                     <FaCloud className="text-2xl text-[#0A6B7E] mx-auto mb-2" />
                     <p className="font-medium text-gray-800">Public Cloud</p>
-                    <p className="text-sm text-gray-600">Amazon EC2, Microsoft Azure</p>
+                    <p className="text-xs md:text-sm text-gray-600">Amazon EC2, Microsoft Azure</p>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4 text-center">
                     <FaExpand className="text-2xl text-[#36B5A0] mx-auto mb-2" />
                     <p className="font-medium text-gray-800">Federated Clouds</p>
-                    <p className="text-sm text-gray-600">Heterogeneous deployments</p>
+                    <p className="text-xs md:text-sm text-gray-600">Heterogeneous deployments</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Cloud Advantages Section */}
-          {/* <div className="">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-              Cloud <span className="text-[#0A6B7E]">Advantages</span>
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {cloudAdvantages.map((point, index) => (
-                <div key={index} className="bg-white p-6 hover:border hover:rounded-xl hover:border-[#36B5A0] transition-all duration-300 hover:shadow-lg">
-                  <div className="flex flex-col h-full">
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 bg-gray-50 rounded-lg">
-                        {point.icon}
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-3">{point.title}</h3>
-                    <p className="text-gray-600 flex-1">{point.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div> */}
         </div>
       </section>
     </div>

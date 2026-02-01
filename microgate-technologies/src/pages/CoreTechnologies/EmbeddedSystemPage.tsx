@@ -1,6 +1,5 @@
 import React from 'react';
-import { 
-  FaArrowRight,
+import {
   FaCheckCircle,
   FaMicrochip,
   FaNetworkWired,
@@ -115,6 +114,8 @@ const EmbeddedSystemsPage: React.FC = () => {
               background: 'linear-gradient(135deg, #36B5A0 0%, #0A6B7E 50%, #07284C 100%)'
             }}></div>
           </video>
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
           {/* Gradient overlay */}
           <div className="absolute inset-0" style={{
             background: 'linear-gradient(to bottom, rgba(7, 40, 76, 0.7) 0%, rgba(10, 107, 126, 0.5) 50%, rgba(54, 181, 160, 0.3) 100%)'
@@ -122,11 +123,11 @@ const EmbeddedSystemsPage: React.FC = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-6">
+          <div className="text-left w-full">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
               Device-Independent Control for Embedded Interfaces
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8">
+            <p className="text-base md:text-lg text-white/90 mb-8">
               Advanced Embedded Systems Solutions for Modern Technology Applications
             </p>
           </div>
@@ -134,49 +135,59 @@ const EmbeddedSystemsPage: React.FC = () => {
       </section>
 
       {/* Main Content Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto mb-16">
+      <section className="py-5 bg-white">
+        <div className="container mx-auto px-4 mt-10">
+          <div className="max-w-5xl mx-auto">
             {/* Title added */}
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center">
               <span className="text-[#0A6B7E]">Embedded</span> Systems
             </h2>
             
-            {/* Single detailed paragraph - 5-6 lines */}
-            <p className="text-med md:text-med text-gray-700 leading-relaxed">
+            {/* Single detailed paragraph - 4-5 lines */}
+            <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
               <span className="font-semibold text-[#07284C]">Our Microgate Technologies</span> specializes in embedded systems that integrate computer hardware with software as the most significant component, creating dedicated computer-based systems that may be independent or part of larger systems. Considering the vast scope of this field ranging from automotive to consumer electronics and aerospace, the demand for this technology continues to grow exponentially. As electronic devices become more pervasive in everyday life—from mobile devices and home appliances to medical devices like insulin pumps—our expertise in both microprocessors and microcontrollers enables us to deliver solutions that reduce power consumption, size, and cost while supporting various CPU architectures from Von Neumann to Harvard architectures.
             </p>
           </div>
 
           {/* Core Technologies Section - Showing 3 technologies (excluding Embedded Systems) */}
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">
+          <div className="py-3 mt-8">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 text-center">
               Our <span className="text-[#36B5A0]">Core Technologies</span>
             </h2>
             
             {/* Grid Container - Showing only 3 technologies */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               {/* Single Row for 3 technologies */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 {/* Technology 1 */}
                 <div 
                   onClick={() => handleTechnologyClick(coreTechnologies[0].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group"
+                  className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group relative"
                 >
                   <div className="space-y-2">
                     {/* First Row: Title with Arrow */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
+                        <h3 className="text-sm md:text-lg font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
                           {coreTechnologies[0].title}
                         </h3>
                       </div>
-                      <FaArrowRight className="text-[#36B5A0] group-hover:translate-x-2 transition-transform duration-300" />
+                      {/* Upward-facing arrow with border radius - Reduced size for mobile */}
+                      <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="w-6 h-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                          viewBox="0 0 20 20" 
+                          fill="currentColor"
+                        >
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
                     </div>
                     
                     {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-gray-600 text-xs md:text-sm">
                         {coreTechnologies[0].description}
                       </p>
                     </div>
@@ -186,22 +197,31 @@ const EmbeddedSystemsPage: React.FC = () => {
                 {/* Technology 2 */}
                 <div 
                   onClick={() => handleTechnologyClick(coreTechnologies[1].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
+                  className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-2">
                     {/* First Row: Title with Arrow */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
+                        <h3 className="text-sm md:text-lg font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
                           {coreTechnologies[1].title}
                         </h3>
                       </div>
-                      <FaArrowRight className="text-[#0A6B7E] group-hover:translate-x-2 transition-transform duration-300" />
+                      <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="w-6 h-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                          viewBox="0 0 20 20" 
+                          fill="currentColor"
+                        >
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
                     </div>
                     
                     {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-gray-600 text-xs md:text-sm">
                         {coreTechnologies[1].description}
                       </p>
                     </div>
@@ -211,22 +231,31 @@ const EmbeddedSystemsPage: React.FC = () => {
                 {/* Technology 3 */}
                 <div 
                   onClick={() => handleTechnologyClick(coreTechnologies[2].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group"
+                  className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-2">
                     {/* First Row: Title with Arrow */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
+                        <h3 className="text-sm md:text-lg font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
                           {coreTechnologies[2].title}
                         </h3>
                       </div>
-                      <FaArrowRight className="text-[#36B5A0] group-hover:translate-x-2 transition-transform duration-300" />
+                      <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="w-6 h-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                          viewBox="0 0 20 20" 
+                          fill="currentColor"
+                        >
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
                     </div>
                     
                     {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
+                    <div className="pt-3 border-t border-gray-100">
+                      <p className="text-gray-600 text-xs md:text-sm">
                         {coreTechnologies[2].description}
                       </p>
                     </div>
@@ -237,23 +266,23 @@ const EmbeddedSystemsPage: React.FC = () => {
           </div>
 
           {/* Embedded Systems Applications Section */}
-          <div className="bg-gradient-to-r from-[#36B5A0]/10 to-[#0A6B7E]/10 rounded-2xl p-8 mb-16">
-            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+          <div className="bg-gradient-to-r from-[#36B5A0]/10 to-[#0A6B7E]/10 rounded-2xl p-4 py-5">
+            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 mt-10">
               {/* Left side: Title, paragraph, and applications */}
               <div className="lg:w-1/2">
-                <div className="mb-6">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                <div className="">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
                     <span className="text-[#0A6B7E]">Embedded Systems</span> Applications
                   </h3>
-                  <p className="text-gray-700 mb-6">
+                  <p className="text-xs md:text-sm text-gray-700 mb-3">
                     Our embedded systems solutions span across various industries, providing dedicated computer-based systems with integrated hardware and software components for specialized applications ranging from automotive to medical devices.
                   </p>
                 </div>
                 
                 {/* Embedded Applications */}
-                <div className="space-y-4">
+                <div className="grid sm:grid-cols-2 md:grid-cols-1 gap-4">
                   {embeddedApplications.map((item, index) => (
-                    <div key={index} className="flex items-start bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div key={index} className="flex items-start text-left bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
                       <FaCheckCircle className="text-[#36B5A0] mr-3 mt-1 flex-shrink-0" />
                       <span className="font-medium text-gray-800">{item}</span>
                     </div>
@@ -267,9 +296,9 @@ const EmbeddedSystemsPage: React.FC = () => {
                   {/* Actual image from public folder */}
                   <div className="relative w-full h-full overflow-hidden">
                     <img 
-                      src="/solutions-img.png" 
+                      src="/coretechnology-img.png" 
                       alt="Embedded Systems Solutions"
-                      className="w-full h-full object-cover rounded-xl mt-12"
+                      className="w-full h-full object-cover rounded-xl md:mt-12"
                       onError={(e) => {
                         // Fallback if image doesn't load
                         e.currentTarget.style.display = 'none';
@@ -293,10 +322,10 @@ const EmbeddedSystemsPage: React.FC = () => {
 
             {/* Embedded Technologies Section */}
             <div className="mt-12">
-              <h4 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              <h4 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
                 Our <span className="text-[#0A6B7E]">Embedded</span> Expertise
               </h4>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {embeddedTechnologies.map((tech, index) => (
                   <div key={index} className="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-[#36B5A0] transition-all duration-300">
                     <div className="flex flex-col items-center text-center h-full">
@@ -313,17 +342,17 @@ const EmbeddedSystemsPage: React.FC = () => {
           </div>
 
           {/* Important Points Section */}
-          <div className="">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
+          <div className="py-5">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center mt-10">
               Key <span className="text-[#0A6B7E]">Features</span>
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {importantPoints.map((point, index) => (
                 <div key={index} className="bg-white p-6 hover:border hover:rounded-xl hover:border-[#36B5A0] transition-all duration-300 hover:shadow-lg">
                   <div className="flex flex-col h-full">
-                    <h3 className="text-xl font-semibold text-gray-800 mb-3">{point.title}</h3>
-                    <p className="text-gray-600 flex-1">{point.description}</p>
+                    <h3 className="text-sm md:text-base font-semibold text-gray-800 mb-3">{point.title}</h3>
+                    <p className="text-xs md:text-sm text-gray-600 flex-1">{point.description}</p>
                   </div>
                 </div>
               ))}

@@ -90,15 +90,6 @@ const ItOutsourcingPage: React.FC = () => {
     }
   ];
 
-  // Benefits
-//   const benefits = [
-//     "Improved quality of candidate pool with enhanced metrics",
-//     "Reduced operational costs and enhanced compliance",
-//     "Ability to adapt to changing market demands",
-//     "Strategic staffing model for long-term success",
-//     "Comprehensive technology and policy framework"
-//   ];
-
   // Function to handle solution click
   const handleSolutionClick = (path: string) => {
     navigate(path);
@@ -125,7 +116,7 @@ const ItOutsourcingPage: React.FC = () => {
             }}></div>
           </video>
           {/* Overlay for better text readability */}
-          {/* <div className="absolute inset-0 bg-black/40"></div> */}
+          <div className="absolute inset-0 bg-black/40"></div>
           {/* Gradient overlay */}
           <div className="absolute inset-0" style={{
             background: 'linear-gradient(to bottom, rgba(7, 40, 76, 0.7) 0%, rgba(10, 107, 126, 0.5) 50%, rgba(54, 181, 160, 0.3) 100%)'
@@ -134,10 +125,10 @@ const ItOutsourcingPage: React.FC = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-left w-full">
-            <h1 className="text-4xl md:text-5xl lg:text-4xl font-bold text-white mb-2">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
               We Build Unique & Custom Solutions
             </h1>
-            <p className="text-med md:text-xl text-white/90 mb-8">
+            <p className="text-base md:text-lg text-white/90 mb-8">
               Functional & technology enabled solutions to solve business problems
             </p>
           </div>
@@ -145,255 +136,262 @@ const ItOutsourcingPage: React.FC = () => {
       </section>
 
       {/* Main Content Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto mb-16">
+      <section className="py-5 bg-white">
+        <div className="container mx-auto px-4 mt-10">
+          <div className="max-w-5xl mx-auto">
             {/* Title added */}
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center">
               IT <span className="text-[#0A6B7E]">Outsourcing</span>
             </h2>
             
             {/* Single detailed paragraph - 4-5 lines */}
-            <p className="text-med md:text-med text-gray-700 leading-relaxed">
+            <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
               <span className="font-semibold text-[#07284C]">Microgate Technologies</span> offers the best offshore software development services that deliver robust, scalable, and cost-effective software solutions. Our clients realize an increase in productivity for offshore software development projects while improving their business performance through the changing demands of their marketplace. Getting the correct people in the opportune place with the correct abilities is urgent for your business success.
             </p>
           </div>
 
           {/* Modified Two Columns Solutions Section - Now showing 6 solutions only */}
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">
-              Our <span className="text-[#36B5A0]">Solutions Portfolio</span>
-            </h2>
-            
-            {/* 3 Rows Grid Container - Now showing only 6 solutions */}
-            <div className="space-y-6">
-              {/* Row 1 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Solution 1 - Testing & QA */}
-                <div 
-                  onClick={() => handleSolutionClick(solutions[0].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group"
-                >
-                  <div className="space-y-2">
-                    {/* First Row: Title with Arrow */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
-                          {solutions[0].title}
-                        </h3>
-                      </div>
-                      <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-10 w-10 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-        </svg>
-      </div></div>
-                    
-                    {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
-                        {solutions[0].description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Solution 2 - Mortgage Solutions */}
-                <div 
-                  onClick={() => handleSolutionClick(solutions[1].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
-                >
-                  <div className="space-y-4">
-                    {/* First Row: Title with Arrow */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
-                          {solutions[1].title}
-                        </h3>
-                      </div>
-                      <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-10 w-10 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-        </svg>
-      </div></div>
-                    
-                    {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
-                        {solutions[1].description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Row 2 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Solution 3 - Power Apps */}
-                <div 
-                  onClick={() => handleSolutionClick(solutions[2].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group"
-                >
-                  <div className="space-y-4">
-                    {/* First Row: Title with Arrow */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
-                          {solutions[2].title}
-                        </h3>
-                      </div>
-                      <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-10 w-10 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-        </svg>
-      </div></div>
-                    
-                    {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
-                        {solutions[2].description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Solution 4 - Cloud Solutions */}
-                <div 
-                  onClick={() => handleSolutionClick(solutions[3].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
-                >
-                  <div className="space-y-4">
-                    {/* First Row: Title with Arrow */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
-                          {solutions[3].title}
-                        </h3>
-                      </div>
-                      <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-10 w-10 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-        </svg>
-      </div></div>
-                    
-                    {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
-                        {solutions[3].description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Row 3 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Solution 5 - BI & Visualization */}
-                <div 
-                  onClick={() => handleSolutionClick(solutions[4].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group"
-                >
-                  <div className="space-y-4">
-                    {/* First Row: Title with Arrow */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
-                          {solutions[4].title}
-                        </h3>
-                      </div>
-                      <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-10 w-10 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-        </svg>
-      </div></div>
-                    
-                    {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
-                        {solutions[4].description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Solution 6 - IT Consulting */}
-                <div 
-                  onClick={() => handleSolutionClick(solutions[5].path)}
-                  className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
-                >
-                  <div className="space-y-4">
-                    {/* First Row: Title with Arrow */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
-                          {solutions[5].title}
-                        </h3>
-                      </div>
-                      <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-10 w-10 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-        </svg>
-      </div></div>
-                    
-                    {/* Second Row: Description */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <p className="text-gray-600">
-                        {solutions[5].description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+<div className="py-3 mt-8">
+  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 text-center">
+    Our <span className="text-[#36B5A0]">Solutions Portfolio</span>
+  </h2>
+  
+  {/* 3 Rows Grid Container - Now showing only 6 solutions */}
+  <div className="space-y-4">
+    {/* Row 1 */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3">
+      {/* Solution 1 - Testing & QA */}
+      <div 
+        onClick={() => handleSolutionClick(solutions[0].path)}
+        className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group relative"
+      >
+        <div className="space-y-2">
+          {/* First Row: Title with Arrow */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <h3 className="text-sm md:text-lg font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
+                {solutions[0].title}
+              </h3>
+            </div>
+            {/* Upward-facing arrow with border radius - Reduced size for mobile */}
+            <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="w-6 h-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                viewBox="0 0 20 20" 
+                fill="currentColor"
+              >
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+              </svg>
             </div>
           </div>
+          
+          {/* Second Row: Description */}
+          <div className="pt-3 border-t border-gray-100">
+            <p className="text-gray-600 text-xs md:text-sm">
+              {solutions[0].description}
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      {/* Solution 2 - Mortgage Solutions */}
+      <div 
+        onClick={() => handleSolutionClick(solutions[1].path)}
+        className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
+      >
+        <div className="space-y-3">
+          {/* First Row: Title with Arrow */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <h3 className="text-med md:text-lg font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
+                {solutions[1].title}
+              </h3>
+            </div>
+            <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="w-6 h-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                viewBox="0 0 20 20" 
+                fill="currentColor"
+              >
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          
+          {/* Second Row: Description */}
+          <div className="pt-3 border-t border-gray-100">
+            <p className="text-xs md:text-sm text-gray-600 text-sm">
+              {solutions[1].description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Row 2 */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3">
+      {/* Solution 3 - Power Apps */}
+      <div 
+        onClick={() => handleSolutionClick(solutions[2].path)}
+        className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group"
+      >
+        <div className="space-y-3">
+          {/* First Row: Title with Arrow */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <h3 className="text-med md:text-lg font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
+                {solutions[2].title}
+              </h3>
+            </div>
+            <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-6 w-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                viewBox="0 0 20 20" 
+                fill="currentColor"
+              >
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          
+          {/* Second Row: Description */}
+          <div className="pt-3 border-t border-gray-100">
+            <p className="text-xs md:text-sm text-gray-600 text-sm">
+              {solutions[2].description}
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      {/* Solution 4 - Cloud Solutions */}
+      <div 
+        onClick={() => handleSolutionClick(solutions[3].path)}
+        className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
+      >
+        <div className="space-y-3">
+          {/* First Row: Title with Arrow */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <h3 className="text-med md:text-lg font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
+                {solutions[3].title}
+              </h3>
+            </div>
+            <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-6 w-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                viewBox="0 0 20 20" 
+                fill="currentColor"
+              >
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          
+          {/* Second Row: Description */}
+          <div className="pt-3 border-t border-gray-100">
+            <p className="text-xs md:text-sm text-gray-600 text-sm">
+              {solutions[3].description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Row 3 */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3">
+      {/* Solution 5 - BI & Visualization */}
+      <div 
+        onClick={() => handleSolutionClick(solutions[4].path)}
+        className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#36B5A0]/50 cursor-pointer group"
+      >
+        <div className="space-y-3">
+          {/* First Row: Title with Arrow */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <h3 className="text-med md:text-lg font-semibold text-gray-800 group-hover:text-[#36B5A0] transition-colors duration-300">
+                {solutions[4].title}
+              </h3>
+            </div>
+            <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-6 w-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                viewBox="0 0 20 20" 
+                fill="currentColor"
+              >
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          
+          {/* Second Row: Description */}
+          <div className="pt-3 border-t border-gray-100">
+            <p className="text-xs md:text-sm text-gray-600 text-sm">
+              {solutions[4].description}
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      {/* Solution 6 - IT Consulting */}
+      <div 
+        onClick={() => handleSolutionClick(solutions[5].path)}
+        className="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-xl transition-all duration-300 hover:border-[#0A6B7E]/50 cursor-pointer group"
+      >
+        <div className="space-y-3">
+          {/* First Row: Title with Arrow */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <h3 className="text-med md:text-lg font-semibold text-gray-800 group-hover:text-[#0A6B7E] transition-colors duration-300">
+                {solutions[5].title}
+              </h3>
+            </div>
+            <div className="group-hover:bg-[#36B5A0]/10 transition-colors duration-300">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="w-6 h-6 md:h-8 md:w-8 text-[#36B5A0] transform rotate-45 group-hover:rotate-90 transition-transform duration-300" 
+                viewBox="0 0 20 20" 
+                fill="currentColor"
+              >
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          
+          {/* Second Row: Description */}
+          <div className="pt-3 border-t border-gray-100">
+            <p className="text-xs md:text-sm text-gray-600 text-sm">
+              {solutions[5].description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
           {/* IT Outsourcing Services Section */}
-          <div className="bg-gradient-to-r from-[#36B5A0]/10 to-[#0A6B7E]/10 rounded-2xl p-8 mb-16">
-            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+          <div className="bg-gradient-to-r from-[#36B5A0]/10 to-[#0A6B7E]/10 rounded-2xl p-4 py-5 ">
+            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 mt-10">
               {/* Left side: Title, paragraph, and services */}
               <div className="lg:w-1/2">
-                <div className="mb-6">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                <div className="">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
                     Our <span className="text-[#0A6B7E]">Outsourcing</span> Services
                   </h3>
-                  <p className="text-gray-700 mb-6">
+                  <p className="text-xs md:text-sm text-gray-700 mb-3">
                     Microgate Technologies can free up your recruiters to do what they excel at - selecting. Our team can handle the entire recruiting/hiring process from job profiling through the onboarding of new talent, including staff, technology, and policy and reporting.
                   </p>
                 </div>
                 
                 {/* Services list */}
-                <div className="space-y-4">
+                <div className="grid sm:grid-cols-2 md:grid-cols-1 gap-4">
                   {outsourcingServices.map((item, index) => (
-                    <div key={index} className="flex items-start bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div key={index} className="flex items-start text-left bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
                       <FaCheckCircle className="text-[#36B5A0] mr-3 mt-1 flex-shrink-0" />
                       <span className="font-medium text-gray-800">{item}</span>
                     </div>
@@ -402,14 +400,14 @@ const ItOutsourcingPage: React.FC = () => {
               </div>
               
               {/* Right side: Image */}
-              <div className="lg:w-1/2">
-                <div className="p-4 h-full flex items-center justify-center">
+              <div className="lg:w-1/2 ">
+                <div className=" p-4 h-full flex items-center justify-center">
                   {/* Actual image from public folder */}
-                  <div className="relative w-full h-full overflow-hidden">
+                  <div className="relative w-full h-full 1 overflow-hidden">
                     <img 
                       src="/solutions-img.png" 
                       alt="IT Outsourcing Solutions"
-                      className="w-full h-full object-cover rounded-xl mt-12"
+                      className="w-full h-full object-cover rounded-xl md:mt-12"
                       onError={(e) => {
                         // Fallback if image doesn't load
                         e.currentTarget.style.display = 'none';
@@ -432,38 +430,18 @@ const ItOutsourcingPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Benefits Section */}
-          {/* <div className="mb-8">
-            <div className="bg-white rounded-xl p-6 shadow-md border-l-4 border-[#0A6B7E]">
-              <div className="flex items-start">
-                <FaRocket className="text-2xl text-[#0A6B7E] mr-4 mt-1" />
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Client Benefits</h4>
-                  <ul className="space-y-2">
-                    {benefits.map((benefit, index) => (
-                      <li key={index} className="flex items-start">
-                        <div className="w-1.5 h-1.5 bg-[#36B5A0] rounded-full mt-2 mr-3"></div>
-                        <span className="text-gray-700">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div> */}
-
           {/* Important Points Section */}
-          <div className="">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
+          <div className="py-5">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 text-center mt-10">
               Key <span className="text-[#0A6B7E]">Advantages</span>
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {importantPoints.map((point, index) => (
                 <div key={index} className="bg-white p-6 hover:border hover:rounded-xl hover:border-[#36B5A0] transition-all duration-300 hover:shadow-lg">
                   <div className="flex flex-col h-full">
-                    <h3 className="text-xl font-semibold text-gray-800 mb-3">{point.title}</h3>
-                    <p className="text-gray-600 flex-1">{point.description}</p>
+                    <h3 className="text-sm md:text-base font-semibold text-gray-800 mb-3">{point.title}</h3>
+                    <p className="text-xs md:text-sm text-gray-600 flex-1">{point.description}</p>
                   </div>
                 </div>
               ))}
