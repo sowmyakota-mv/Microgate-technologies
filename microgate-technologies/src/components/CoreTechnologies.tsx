@@ -149,7 +149,7 @@ const CoreTechnologies: React.FC = () => {
           <div className="lg:col-span-1 order-1 lg:order-1">
             <div className="lg:sticky lg:top-24">
               <div className="relative overflow-hidden mb-4 lg:mb-0">
-                <div className="aspect-[4/3] sm:aspect-[6/3] lg:aspect-[3/4] relative">
+                <div className="aspect-[4/3] sm:aspect-[6/3] lg:aspect-[4/4] relative">
                   {/* All Images Stacked */}
                   {technologies.map((tech) => (
                     <div
