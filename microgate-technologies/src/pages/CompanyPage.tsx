@@ -321,7 +321,7 @@ const CompanyPage: React.FC = () => {
               </p>
               <div className="p-4 bg-blue-50 rounded-xl border-l-4 border-blue-600">
                 <div className="flex items-start">
-                  <FaQuoteLeft className="text-blue-600 text-2xl mr-4 mt-1" />
+                  <FaQuoteLeft className="text-blue-600 text-4xl mr-4 mt-1" />
                   <div>
                     <p className="text-[#07284C] text-sm md:text-med font-semibold text-left italic">
                       We consistently deliver cost-effective, value-driven solutions through the integration 
