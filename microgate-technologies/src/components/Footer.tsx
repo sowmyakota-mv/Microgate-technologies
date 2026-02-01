@@ -36,7 +36,7 @@ const Footersection: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-[#0B1A2A] text-gray-300 mt-16">
+    <footer className="bg-[#0B1A2A] text-gray-300">
       {/* Top Section */}
       <ScrollAnimation>
         <div className="max-w-7xl mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-gray-900">

@@ -6,11 +6,13 @@ import {
   CheckSquare, 
   ArrowRight, 
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const CoreTechnologies: React.FC = () => {
   const [activeTechId, setActiveTechId] = useState<number>(1);
   const [isHovering, setIsHovering] = useState<boolean>(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const technologies = [
     {
@@ -29,15 +31,16 @@ const CoreTechnologies: React.FC = () => {
         "Consumer Electronics",
         "Aerospace Systems",
         "IoT Device Development"
-      ]
+      ],
+      navigateTo: "/embedded-systems"
     },
-    {
-      id: 2,
-      icon: <Microchip className="w-10 h-10" />,
-      title: "VLSI Design",
-      description: "Today, we are poised to be the leading chip solutions provider across verticals – Automotive, Server, Graphics and mobile platforms, to name a few.",
-      gradient: "from-purple-500 to-purple-700",
-      bg: "bg-gradient-to-br from-purple-50/80 via-white to-purple-50/30",
+      {
+  id: 2,
+  icon: <Microchip className="w-10 h-10" />,
+  title: "VLSI Design",
+  description: "Leading semiconductor solutions provider specializing in Automotive, Server, Graphics, and Mobile platforms with innovative cutting-edge chip design expertise across global technology markets.",
+  gradient: "from-purple-500 to-purple-700",
+  bg: "bg-gradient-to-br from-purple-50/80 via-white to-purple-50/30",
       border: "border border-purple-100",
       color: "text-purple-600",
       stat: "Chip Solutions Expert",
@@ -47,8 +50,9 @@ const CoreTechnologies: React.FC = () => {
         "Low Power Design",
         "Cross-platform Integration",
         "Full-cycle Development"
-      ]
-    },
+      ],
+      navigateTo: "/vlsi-design"
+},
     {
       id: 3,
       icon: <Code className="w-10 h-10" />,
@@ -65,7 +69,8 @@ const CoreTechnologies: React.FC = () => {
         "Multi-core Processing",
         "Hardware Acceleration",
         "System Optimization"
-      ]
+      ],
+      navigateTo: "/embedded-systems"
     },
     {
       id: 4,
@@ -83,7 +88,8 @@ const CoreTechnologies: React.FC = () => {
         "Feature Extraction",
         "Sign-off Checklist",
         "Flawless Execution"
-      ]
+      ],
+      navigateTo: "/design-verification"
     }
   ];
 
@@ -106,10 +112,16 @@ const CoreTechnologies: React.FC = () => {
     setIsHovering(false);
   };
 
+  // Handle Learn More button click navigation
+  const handleLearnMoreClick = (navigateTo: string) => {
+    navigate(navigateTo);
+  };
+
   const activeTech = technologies.find(tech => tech.id === activeTechId) || technologies[0];
 
   return (
-    <section className="py-16 md:py-12 bg-gradient-to-b from-gray-50/50 to-white relative overflow-hidden" ref={sectionRef}>
+    <section className="py-5 mb-8 bg-gradient-to-b from-gray-50/50 to-white relative overflow-hidden" ref={sectionRef}>
+      <div className="mt-12">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
@@ -123,21 +135,21 @@ const CoreTechnologies: React.FC = () => {
             <div className="w-2 h-2 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full"></div>
             <span>CORE TECHNOLOGIES</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+          <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
             Advanced <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#3B82F6] to-[#1E3A8A] bg-[length:200%] animate-gradient">Technical</span> Expertise
           </h1>
-          <p className="text-med text-gray-600">
+          <p className="text-sm md:text-base text-gray-600">
             Cutting-edge technology solutions that power innovation and drive digital transformation across industries.
           </p>
         </div>
 
         {/* Main Layout: Left Images Stack, Right 4 Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column - Stacked Images with Scrolling */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-24">
-              <div className="relative  overflow-hidden">
-                <div className="aspect-[3/4] relative">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-4 lg:gap-8">
+          {/* Left Column - Stacked Images with Scrolling - MOBILE/TABLET: Show above cards */}
+          <div className="lg:col-span-1 order-1 lg:order-1">
+            <div className="lg:sticky lg:top-24">
+              <div className="relative overflow-hidden mb-4 lg:mb-0">
+                <div className="aspect-[4/3] sm:aspect-[6/3] lg:aspect-[3/4] relative">
                   {/* All Images Stacked */}
                   {technologies.map((tech) => (
                     <div
@@ -151,7 +163,7 @@ const CoreTechnologies: React.FC = () => {
                       <img 
                         src={tech.image}
                         alt={tech.title}
-                        className="w-full h-[80vh] object-contain"
+                        className="w-full h-[40vh] sm:h-[45vh] lg:h-[60vh] object-contain"
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
                           const placeholder = document.createElement('div');
@@ -170,68 +182,39 @@ const CoreTechnologies: React.FC = () => {
                         }}
                       />
                       
-                      {/* Overlay for active image */}
-                      {/* <div className={`absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent transition-opacity duration-500 ${
-                        activeTechId === tech.id ? 'opacity-100' : 'opacity-0'
-                      }`}></div> */}
-                      
-                      {/* Content for active image */}
-                      {/* <div className={`absolute bottom-0 left-0 right-0 p-6 text-white transition-all duration-500 ${
-                        activeTechId === tech.id ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-                      }`}>
-                        <div className={`bg-gradient-to-r ${tech.gradient}/90 backdrop-blur-sm rounded-xl p-4`}>
-                          <div className="flex items-center gap-3 mb-2">
-                            <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                              {React.cloneElement(tech.icon, { className: "w-6 h-6 text-white" })}
-                            </div>
-                            <div>
-                              <h3 className="text-lg font-bold">{tech.title}</h3>
-                              <p className="text-white/80 text-sm">{tech.stat}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div> */}
+                      {/* Image Navigation Dots */}
+                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
+                        {technologies.map((tech) => (
+                          <button
+                            key={tech.id}
+                            onClick={() => {
+                              setActiveTechId(tech.id);
+                              setIsHovering(true);
+                              setTimeout(() => setIsHovering(false), 1000);
+                            }}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                              activeTechId === tech.id 
+                                ? `w-6 bg-white` 
+                                : 'bg-white/60 hover:bg-white/80'
+                            }`}
+                            aria-label={`Show ${tech.title} image`}
+                          />
+                        ))}
+                      </div>
                     </div>
                   ))}
-                  
-                  {/* Image Navigation Dots */}
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
-                    {technologies.map((tech) => (
-                      <button
-                        key={tech.id}
-                        onClick={() => {
-                          setActiveTechId(tech.id);
-                          setIsHovering(true);
-                          setTimeout(() => setIsHovering(false), 1000);
-                        }}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                          activeTechId === tech.id 
-                            ? `w-6 bg-white` 
-                            : 'bg-white/60 hover:bg-white/80'
-                        }`}
-                        aria-label={`Show ${tech.title} image`}
-                      />
-                    ))}
-                  </div>
                 </div>
               </div>
-              
-              {/* Active Image Indicator */}
-              {/* <div className="mt-4 flex items-center justify-center">
-                <div className={`px-4 py-2 rounded-full ${activeTech.color}/20 ${activeTech.color} text-sm font-medium transition-all duration-500`}>
-                  {activeTech.title}
-                </div>
-              </div> */}
             </div>
           </div>
 
-          {/* Right Column - 4 Technology Cards */}
-          <div className="lg:col-span-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Right Column - 4 Technology Cards - MOBILE/TABLET: Show below image */}
+          <div className="lg:col-span-2 order-2 lg:order-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 md:gap-4 lg:gap-6">
               {technologies.map((tech) => (
                 <div
                   key={tech.id}
-                  className={`${tech.bg} ${tech.border} rounded-2xl p-8 group hover:shadow-2xl transition-all duration-500 relative overflow-hidden ${
+                  className={`${tech.bg} ${tech.border} rounded-2xl p-3 sm:p-4 group hover:shadow-2xl transition-all duration-500 relative overflow-hidden ${
                     activeTechId === tech.id 
                       ? 'scale-105 shadow-xl ring-2 ring-offset-2 ring-opacity-30' 
                       : 'hover:-translate-y-2'
@@ -262,33 +245,21 @@ const CoreTechnologies: React.FC = () => {
                   
                   {/* Content */}
                   <div className="relative">
-                    {/* <div className="flex items-start justify-between mb-6">
-                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${tech.gradient} flex items-center justify-center shadow-lg transition-transform duration-300 ${
-                        activeTechId === tech.id ? 'scale-110' : ''
-                      }`}>
-                        <div className="text-white">
-                          {tech.icon}
-                        </div>
-                      </div>
-                      <span className={`px-3 py-1 rounded-full ${tech.color}/20 text-xs font-medium ${tech.color} transition-all duration-300 ${
-                        activeTechId === tech.id ? 'scale-110' : ''
-                      }`}>
-                        {tech.stat}
-                      </span>
-                    </div> */}
-
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 transition-colors duration-300">
                       {tech.title}
                     </h3>
 
-                    <p className="text-gray-600 text-left mb-6 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-left mb-2 text-xs sm:text-sm leading-relaxed">
                       {tech.description}
                     </p>
 
-                    <div className="flex items-center justify-between pt-6 border-t border-gray-100/50">
-                      <button className={`flex items-center gap-2 font-semibold ${tech.color} text-sm hover:gap-3 transition-all ${
-                        activeTechId === tech.id ? 'gap-3' : ''
-                      }`}>
+                    <div className="flex items-center justify-between pt-2 border-t border-gray-100/50">
+                      <button 
+                        onClick={() => handleLearnMoreClick(tech.navigateTo)}
+                        className={`flex items-center gap-2 font-semibold ${tech.color} text-xs sm:text-sm hover:gap-3 transition-all ${
+                          activeTechId === tech.id ? 'gap-3' : ''
+                        }`}
+                      >
                         <span>Learn More</span>
                         <ArrowRight className="w-4 h-4 transition-transform duration-300" />
                       </button>
@@ -299,6 +270,7 @@ const CoreTechnologies: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

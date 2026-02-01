@@ -117,7 +117,7 @@ const Header: React.FC = () => {
             <img 
               src="/microgate-logo.png" 
               alt="Infovance Logo" 
-              className="h-16 md:h-20 w-16 md:w-48 rounded-full object-contain"
+              className="h-16 md:h-20 w-48 md:w-48 rounded-full object-contain"
             />
           </Link>
         </div>

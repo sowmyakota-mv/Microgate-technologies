@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const slides = [
   {
@@ -9,6 +10,7 @@ const slides = [
     buttonText: "Know More",
     textColor: "text-white",
     imagePosition: "right",
+    navigateTo: "/technology", // Add navigation path for slide 1
   },
   {
     id: 2,
@@ -17,6 +19,7 @@ const slides = [
     buttonText: "Know More",
     textColor: "text-white",
     imagePosition: "left",
+    navigateTo: "/bi-visualization", // Add navigation path for slide 2
   },
   {
     id: 3,
@@ -25,6 +28,7 @@ const slides = [
     buttonText: "Know More",
     textColor: "text-white",
     imagePosition: "right",
+    navigateTo: "/cloud-solutions", // Add navigation path for slide 3
   },
 ];
 
@@ -32,6 +36,7 @@ const HeroSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const navigate = useNavigate(); // Initialize navigate hook
 
   // Auto slide functionality
   useEffect(() => {
@@ -52,6 +57,14 @@ const HeroSection: React.FC = () => {
       });
     }
   }, []);
+
+  // Handle navigation for the current slide
+  const handleKnowMoreClick = () => {
+    const currentSlideData = slides[currentSlide];
+    if (currentSlideData.navigateTo) {
+      navigate(currentSlideData.navigateTo);
+    }
+  };
 
   return (
     <div className="relative w-screen overflow-hidden" style={{ margin: 0, padding: 0 }}>
@@ -106,10 +119,10 @@ const HeroSection: React.FC = () => {
             {/* Content Container */}
             <div className="relative h-full flex items-center justify-center w-screen" style={{ margin: 0, padding: 0 }}>
               {/* Text Content Only - No Images */}
-              <div className="w-full max-w-7xl px-4 md:px-8">
+              <div className="w-full max-w-7xl px-4 md:px-8 mt-16">
                 <div className="max-w-4xl mx-auto text-center">
                   <div className="space-y-2">
-                    <h1 className={`text-2xl md:text-5xl lg:text-3xl font-bold ${slide.textColor} leading-tight`}>
+                    <h1 className={`text-2xl md:text-3xl lg:text-3xl font-bold ${slide.textColor} leading-tight`}>
                       {slide.title}
                     </h1>
                     <p className="text-sm md:text-base text-white/90 max-w-3xl mx-auto">
@@ -120,8 +133,11 @@ const HeroSection: React.FC = () => {
                   {/* Know More Button */}
                   <div className="pt-4">
                     <button 
-                      onClick={() => {/* Add your navigation or modal logic here */}}
-                      className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                      onClick={handleKnowMoreClick}
+                      className="group inline-flex items-center gap-3 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                      style={{
+                        background: 'linear-gradient(135deg, #36B5A0 0%, #0A6B7E 50%, #07284C 100%)'
+                      }}
                     >
                       {slide.buttonText}
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />

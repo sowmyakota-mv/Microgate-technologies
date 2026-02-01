@@ -11,11 +11,13 @@ import {
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const SolutionsSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
   const containerRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const allSolutions = [
     {
@@ -26,7 +28,8 @@ const SolutionsSection: React.FC = () => {
       gradient: "from-blue-500 to-blue-600",
       bg: "bg-blue-50",
       iconColor: "text-blue-600",
-      image: "/it-consulting.png"
+      image: "/it-consulting.png",
+      navigateTo: "/it-consulting"
     },
     {
       id: 2,
@@ -36,7 +39,8 @@ const SolutionsSection: React.FC = () => {
       gradient: "from-green-500 to-green-600",
       bg: "bg-green-50",
       iconColor: "text-green-600",
-      image: "/it-outsourcing.png"
+      image: "/it-outsourcing.png",
+      navigateTo: "/it-outsourcing"
     },
     {
       id: 3,
@@ -46,7 +50,8 @@ const SolutionsSection: React.FC = () => {
       gradient: "from-red-500 to-red-600",
       bg: "bg-red-50",
       iconColor: "text-red-600",
-      image: "/testing-solutions.png"
+      image: "/testing-solutions.png",
+      navigateTo: "/testing-qa"
     },
     {
       id: 4,
@@ -56,7 +61,8 @@ const SolutionsSection: React.FC = () => {
       gradient: "from-amber-500 to-amber-600",
       bg: "bg-amber-50",
       iconColor: "text-amber-600",
-      image: "/mortage-solutions.png"
+      image: "/mortage-solutions.png",
+      navigateTo: "/mortgage-solutions"
     },
     {
       id: 5,
@@ -66,7 +72,8 @@ const SolutionsSection: React.FC = () => {
       gradient: "from-purple-500 to-purple-600",
       bg: "bg-purple-50",
       iconColor: "text-purple-600",
-      image: "/power-solutions.png"
+      image: "/power-solutions.png",
+      navigateTo: "/power-apps"
     },
     {
       id: 6,
@@ -76,7 +83,8 @@ const SolutionsSection: React.FC = () => {
       gradient: "from-indigo-500 to-indigo-600",
       bg: "bg-indigo-50",
       iconColor: "text-indigo-600",
-      image: "/cloud-solutions.png"
+      image: "/cloud-solutions.png",
+      navigateTo: "/cloud-solutions"
     },
     {
       id: 7,
@@ -86,19 +94,18 @@ const SolutionsSection: React.FC = () => {
       gradient: "from-teal-500 to-teal-600",
       bg: "bg-teal-50",
       iconColor: "text-teal-600",
-      image: "/bi-solutions.png"
+      image: "/bi-solutions.png",
+      navigateTo: "/bi-visualization"
     }
   ];
 
-  // Update visible cards based on screen size
+  // Update visible cards based on screen size - FIXED
   useEffect(() => {
     const updateVisibleCards = () => {
-      if (window.innerWidth >= 1280) {
-        setVisibleCards(3); // xl screens
-      } else if (window.innerWidth >= 1024) {
-        setVisibleCards(3); // lg screens
+      if (window.innerWidth >= 1024) {
+        setVisibleCards(3); // lg screens and above
       } else if (window.innerWidth >= 768) {
-        setVisibleCards(2); // md screens
+        setVisibleCards(2); // md screens (tablet)
       } else {
         setVisibleCards(1); // mobile
       }
@@ -140,25 +147,27 @@ const SolutionsSection: React.FC = () => {
     return allSolutions.slice(currentIndex, endIndex);
   };
 
-  // const isAtStart = currentIndex === 0;
-  // const isAtEnd = currentIndex >= allSolutions.length - visibleCards;
+  // Handle Learn More button click
+  const handleLearnMoreClick = (navigateTo: string) => {
+    navigate(navigateTo);
+  };
 
   return (
-    <section className="py-16 md:py-12 bg-gradient-to-b from-gray-50 to-white">
-      <div className="w-full lg:w-screen mx-auto px-4 md:px-8">
+    <section className="py-5 bg-gradient-to-b from-gray-50 to-white mb-6">
+      <div className="w-full lg:w-screen mx-auto px-4 md:px-8 mt-12">
         {/* Header Section */}
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#1E3A8A]/10 to-[#3B82F6]/10 text-[#1E3A8A] text-sm font-semibold mb-4">
             <Zap className="w-4 h-4" />
             OUR SOLUTIONS
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
             COMPREHENSIVE{" "}
             <span className="transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6]">
               IT SOLUTIONS
             </span>
           </h1>
-          <p className="text-sm md:text-lg text-gray-600 max-w-4xl mx-auto">
+          <p className="text-xs md:text-lg text-gray-600 max-w-4xl mx-auto">
             End-to-end technology solutions designed to address your business challenges and drive growth
           </p>
         </div>
@@ -177,7 +186,7 @@ const SolutionsSection: React.FC = () => {
           {/* Right Arrow */}
           <button
             onClick={nextSlide}
-            className={`absolute right-6 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 hover:bg-gray-50 hover:shadow-xl hover:scale-110`}
+            className={`absolute right-2 md:right-6 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 hover:bg-gray-50 hover:shadow-xl hover:scale-110`}
             aria-label="Next solutions"
           >
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-[#1E3A8A]" />
@@ -186,19 +195,19 @@ const SolutionsSection: React.FC = () => {
           {/* Solutions Grid */}
           <div 
             ref={containerRef}
-            className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500"
+            className="w-[80%] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500 "
           >
             {getVisibleSolutions().map((solution) => (
               <div
                 key={solution.id}
-                className="group  hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                className="group hover:shadow-2xl transition-all duration-500 overflow-hidden hover:bg-white hover:rounded-xl"
               >
                 {/* Image Section */}
                 <div className="relative h-40 overflow-hidden bg-gray-100">
                   <img 
                     src={solution.image} 
                     alt={solution.title}
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105 "
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                       const parent = e.currentTarget.parentElement;
@@ -209,20 +218,11 @@ const SolutionsSection: React.FC = () => {
                   />
                   
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* Icon Badge on Image */}
-                  {/* <div className="absolute top-4 left-6">
-                    <div className={`w-10 h-10 ${solution.bg} flex items-center justify-center shadow-md`}>
-                      <div className={solution.iconColor}>
-                        {React.cloneElement(solution.icon, { className: "w-5 h-5" })}
-                      </div>
-                    </div>
-                  </div> */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0  group-hover:opacity-100 transition-opacity duration-300 "></div>
                 </div>
 
                 {/* Content Section */}
-                <div className="p-6">
+                <div className="p-2 md:p-4">
                   {/* Title */}
                   <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-[#1E3A8A] transition-colors duration-300">
                     {solution.title}
@@ -234,7 +234,10 @@ const SolutionsSection: React.FC = () => {
                   </p>
 
                   {/* Learn More Button */}
-                  <button className="group/btn inline-flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm hover:text-[#3B82F6] transition-colors">
+                  <button 
+                    onClick={() => handleLearnMoreClick(solution.navigateTo)}
+                    className="group/btn inline-flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm hover:text-[#3B82F6] transition-colors"
+                  >
                     Learn More
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </button>
@@ -242,35 +245,6 @@ const SolutionsSection: React.FC = () => {
               </div>
             ))}
           </div>
-
-          {/* Navigation Dots */}
-          {/* <div className="flex justify-center gap-2 mt-8">
-            {Array.from({ length: Math.ceil(allSolutions.length / visibleCards) }).map((_, index) => {
-              const startIndex = index * visibleCards;
-              const isActive = currentIndex >= startIndex && currentIndex < startIndex + visibleCards;
-              return (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(startIndex)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    isActive 
-                      ? 'bg-[#1E3A8A] w-8' 
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                  aria-label={`Go to solutions group ${index + 1}`}
-                />
-              );
-            })}
-          </div> */}
-
-          {/* Solution Counter - Updated to show continuous counting */}
-          {/* <div className="text-center mt-6 text-gray-600">
-            <span className="font-semibold text-[#1E3A8A]">
-              {currentIndex + 1}-{currentIndex + visibleCards > allSolutions.length ? allSolutions.length : currentIndex + visibleCards}
-            </span>
-            <span className="mx-2">of</span>
-            <span>{allSolutions.length} Solutions</span>
-          </div> */}
         </div>
       </div>
     </section>
