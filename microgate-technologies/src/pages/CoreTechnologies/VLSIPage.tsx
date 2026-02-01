@@ -1,13 +1,8 @@
 import React from 'react';
 import { 
-  FaArrowRight,
   FaCheckCircle,
   FaChartLine,
-  FaCogs,
-  FaShieldAlt,
-  FaLightbulb,
   FaClipboardCheck,
-  FaMicrochip,
   FaCar,
   FaServer,
   FaMobile,
@@ -75,13 +70,13 @@ const VLSIPage: React.FC = () => {
   ];
 
   // VLSI Expertise
-  const vlsiExpertise = [
-    "DFT & DFD Microarchitecture",
-    "Low Power Design & Management",
-    "Data Converters & Power Management",
-    "Foundation IP Development",
-    "Bench Characterization & ATE Validation"
-  ];
+  // const vlsiExpertise = [
+  //   "DFT & DFD Microarchitecture",
+  //   "Low Power Design & Management",
+  //   "Data Converters & Power Management",
+  //   "Foundation IP Development",
+  //   "Bench Characterization & ATE Validation"
+  // ];
 
   // Function to handle technology click
   const handleTechnologyClick = (path: string) => {
