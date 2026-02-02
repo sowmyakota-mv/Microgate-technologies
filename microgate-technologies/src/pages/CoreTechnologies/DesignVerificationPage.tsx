@@ -87,7 +87,7 @@ const DesignVerificationPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Video Background */}
-      <section className="pt-28 pb-20 relative overflow-hidden">
+      <section className="pt-48 pb-20 relative overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
           <video

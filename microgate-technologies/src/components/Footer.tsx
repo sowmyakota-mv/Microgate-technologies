@@ -44,7 +44,7 @@ const Footersection: React.FC = () => {
 
   // Handle Know More click
   const handleKnowMoreClick = () => {
-    navigate("/abouttransform");
+    navigate("/company");
   };
 
   return (
@@ -73,9 +73,9 @@ const Footersection: React.FC = () => {
               <li><button onClick={() => navigate("/bi-visualization")} className="hover:text-white cursor-pointer">Solutions</button></li>
               <li><button onClick={() => navigate("/technology")} className="hover:text-white cursor-pointer">Industries</button></li>
               <li><button onClick={() => navigate("/microsoft-technologies")} className="hover:text-white cursor-pointer">Technologies</button></li>
-              <li><button onClick={() => navigate("/netwroking")} className="hover:text-white cursor-pointer">Core Technology</button></li>
+              <li><button onClick={() => navigate("/networking")} className="hover:text-white cursor-pointer">Core Technology</button></li>
               <li><button onClick={() => navigate("/why-us")} className="hover:text-white cursor-pointer">Why Us</button></li>
-              <li><button onClick={() => navigate("/contact")} className="hover:text-white cursor-pointer">Contact</button></li>
+              <li><button onClick={() => navigate("/contact-us")} className="hover:text-white cursor-pointer">Contact Us</button></li>
             </ul>
           </div>
 
