@@ -6,6 +6,32 @@ import {
 } from 'react-icons/fa';
 
 const ContactSection: React.FC = () => {
+  // Phone number and email (update these with your actual contact info)
+  const phoneNumber = "+911234567890";
+  const whatsappNumber = "+911234567890"; // Same as phone or different
+  const emailAddress = "info@microgatetech.com";
+  const companyAddress = "123 Technology Park, Innovation Road, Hyderabad, Telangana 500081, India";
+
+  // Functions to handle contact actions
+  const handlePhoneClick = () => {
+    window.location.href = `tel:${phoneNumber}`;
+  };
+
+  const handleWhatsAppClick = () => {
+    // Open WhatsApp with a pre-filled message
+    const message = "Hello Microgate Technologies, I would like to inquire about your services.";
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
+  const handleEmailClick = () => {
+    window.location.href = `mailto:${emailAddress}?subject=Inquiry%20from%20Website&body=Hello%20Microgate%20Technologies,%0D%0A%0D%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0D%0A%0D%0A`;
+  };
+
+  const handleMapClick = () => {
+    // Open Google Maps with the address
+    window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress)}`, '_blank');
+  };
+
   return (
     <>
       {/* Hero Section with Image Background */}
@@ -25,12 +51,6 @@ const ContactSection: React.FC = () => {
               e.currentTarget.parentElement?.appendChild(fallbackDiv);
             }}
           />
-          {/* Overlay for better text readability */}
-          {/* <div className="absolute inset-0 bg-black/50"></div> */}
-          {/* Gradient overlay to match theme */}
-          {/* <div className="absolute inset-0" style={{
-            background: 'linear-gradient(to right, rgba(7, 40, 76, 0.8) 0%, rgba(10, 107, 126, 0.6) 50%, rgba(54, 181, 160, 0.4) 100%)'
-          }}></div> */}
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -80,6 +100,12 @@ const ContactSection: React.FC = () => {
                       Hyderabad, Telangana 500081
                       India
                     </p>
+                    <button 
+                      onClick={handleMapClick}
+                      className="text-[#0A6B7E] hover:text-[#36B5A0] font-medium text-sm mt-2 cursor-pointer transition-colors"
+                    >
+                      Open in Maps →
+                    </button>
                   </div>
                 </div>
               </div>
@@ -101,44 +127,34 @@ const ContactSection: React.FC = () => {
                   </p>
                   
                   {/* Details */}
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     <div>
-                      {/* <p className="text-gray-500 text-sm mb-1"></p> */}
-                      <a 
-                        href="tel:+911234567890" 
-                        className="text-lg font-semibold text-[#0A6B7E] hover:text-[#36B5A0] transition-colors"
+                      <button 
+                        onClick={handlePhoneClick}
+                        className="text-lg font-semibold text-[#0A6B7E] hover:text-[#36B5A0] transition-colors cursor-pointer"
                       >
                         +91 12345 67890
-                      </a>
-                    </div>
-                    {/* <div>
-                      <p className="text-gray-500 text-sm mb-1">Technical Support</p>
-                      <a 
-                        href="tel:+911234567891" 
-                        className="text-lg font-semibold text-[#0A6B7E] hover:text-[#36B5A0] transition-colors"
-                      >
-                        +91 12345 67891
-                      </a>
+                      </button>
+                      {/* <p className="text-gray-500 text-xs mt-1">Click to call</p> */}
                     </div>
                     <div>
-                      <p className="text-gray-500 text-sm mb-1">Toll-Free Number</p>
-                      <a 
-                        href="tel:18001234567" 
-                        className="text-lg font-semibold text-[#0A6B7E] hover:text-[#36B5A0] transition-colors"
+                      <button 
+                        onClick={handleWhatsAppClick}
+                        className="text-base font-semibold text-green-600 hover:text-green-500 transition-colors cursor-pointer"
                       >
-                        1800 123 4567
-                      </a>
+                        WhatsApp: +91 12345 67890
+                      </button>
+                      {/* <p className="text-gray-500 text-xs mt-1">Click for WhatsApp</p> */}
                     </div>
-                  </div> */}
+                  </div>
                 </div>
-              </div>
               </div>
               
               {/* Column 3: Email */}
               <div className="p-4">
                 <div className="text-center">
                   {/* Icon */}
-                  <div className="w-12 h-12  flex items-center justify-center mx-auto mb-2">
+                  <div className="w-12 h-12 flex items-center justify-center mx-auto mb-2">
                     <FaEnvelope className="text-3xl text-[#0A6B7E]" />
                   </div>
                   
@@ -151,43 +167,21 @@ const ContactSection: React.FC = () => {
                   </p>
                   
                   {/* Details */}
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     <div>
-                      {/* <p className="text-gray-500 text-sm mb-1">General Inquiries</p> */}
-                      <a 
-                        href="mailto:info@microgatetech.com" 
-                        className="text-base font-semibold text-[#0A6B7E] hover:text-[#36B5A0] transition-colors break-words"
+                      <button 
+                        onClick={handleEmailClick}
+                        className="text-base font-semibold text-[#0A6B7E] hover:text-[#36B5A0] transition-colors break-words cursor-pointer"
                       >
                         info@microgatetech.com
-                      </a>
+                      </button>
+                      {/* <p className="text-gray-500 text-xs mt-1">Click to email</p> */}
                     </div>
-                    {/* <div>
-                      <p className="text-gray-500 text-sm mb-1">Sales Department</p>
-                      <a 
-                        href="mailto:sales@microgatetech.com" 
-                        className="text-base font-semibold text-[#0A6B7E] hover:text-[#36B5A0] transition-colors break-words"
-                      >
-                        sales@microgatetech.com
-                      </a>
-                    </div> */}
-                    {/* <div>
-                      <p className="text-gray-500 text-sm mb-1">Support Team</p>
-                      <a 
-                        href="mailto:support@microgatetech.com" 
-                        className="text-base font-semibold text-[#0A6B7E] hover:text-[#36B5A0] transition-colors break-words"
-                      >
-                        support@microgatetech.com
-                      </a>
-                    </div> */}
-                    {/* <div>
-                      <p className="text-gray-500 text-sm mb-1">Careers</p>
-                      <a 
-                        href="mailto:careers@microgatetech.com" 
-                        className="text-base font-semibold text-[#0A6B7E] hover:text-[#36B5A0] transition-colors break-words"
-                      >
-                        careers@microgatetech.com
-                      </a>
-                    </div> */}
+                    <div>
+                      {/* <p className="text-gray-500 text-sm mt-2">
+                        For sales inquiries: <button onClick={() => window.location.href = "mailto:sales@microgatetech.com"} className="text-[#0A6B7E] hover:text-[#36B5A0]">sales@microgatetech.com</button>
+                      </p> */}
+                    </div>
                   </div>
                 </div>
               </div>
