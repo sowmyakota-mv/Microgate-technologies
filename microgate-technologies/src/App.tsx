@@ -37,6 +37,7 @@ import EmbeddedSystemsPage from './pages/CoreTechnologies/EmbeddedSystemPage'
 import NetworkingPage from './pages/CoreTechnologies/NetworkingPage'
 import VLSIPage from './pages/CoreTechnologies/VLSIPage'
 import DesignVerificationPage from './pages/CoreTechnologies/DesignVerificationPage'
+import ContactSection from './components/ContactSection'
 
 function App() {
   return (
@@ -86,6 +87,7 @@ function App() {
             <Route path='/networking' element={<NetworkingPage/>}/>
             <Route path='/vlsi-design' element={<VLSIPage/>}/>
             <Route path='/design-verification' element={<DesignVerificationPage/>}/>
+            <Route path='/contact-us' element={<ContactSection/>}/>
           </Routes>
           <Footersection/>
         </div>
